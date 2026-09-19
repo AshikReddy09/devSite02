@@ -25,6 +25,7 @@ The deployable website is generated in `dist/`.
 
 Pushing to `main` automatically builds the site and deploys `dist/` to GitHub Pages.
 The published site is available at `https://ashikreddy09.github.io/devSite02/`.
+Use the repository URL with the `/devSite02/` path; the account root URL is not this project.
 
 ## GoDaddy deployment
 
