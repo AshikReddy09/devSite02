@@ -21,6 +21,11 @@ pnpm build
 
 The deployable website is generated in `dist/`.
 
+## GitHub Pages deployment
+
+Pushing to `main` automatically builds the site and deploys `dist/` to GitHub Pages.
+The published site is available at `https://ashikreddy09.github.io/devSite02/`.
+
 ## GoDaddy deployment
 
 1. Run the production build locally.
