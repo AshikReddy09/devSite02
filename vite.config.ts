@@ -4,6 +4,7 @@ import tailwindcss from "@tailwindcss/vite"
 import path from "node:path"
 
 export default defineConfig({
+  base: "/devSite02/",
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
