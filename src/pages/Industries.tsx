@@ -2,13 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react"
 
 type Page = "home" | "about" | "services" | "industries" | "contact"
 
-type Filter =
-  | "all"
-  | "energy"
-  | "infrastructure"
-  | "engineering"
-  | "sustainability"
-  | "digital"
+type Filter = "all" | "energy" | "infrastructure" | "engineering" | "sustainability" | "digital"
 
 interface IndustriesProps {
   onNavigate: (page: Page) => void
@@ -252,7 +246,7 @@ const projects = [
   },
 ]
 
-const filters: { id: Filter; label: string }[] = [
+const filters: { id: Filter label: string }[] = [
   { id: "all", label: "All Projects" },
   { id: "energy", label: "Energy" },
   { id: "infrastructure", label: "Infrastructure" },
@@ -313,9 +307,7 @@ function Reveal({
       className={className}
       style={{
         opacity: visible ? 1 : 0,
-        transform: visible
-          ? "translate3d(0, 0, 0)"
-          : "translate3d(0, 30px, 0)",
+        transform: visible ? "translate3d(0, 0, 0)" : "translate3d(0, 30px, 0)",
         transition: `opacity 800ms cubic-bezier(.2,.7,.2,1) ${delay}ms,
           transform 800ms cubic-bezier(.2,.7,.2,1) ${delay}ms`,
       }}
@@ -549,6 +541,64 @@ export default function Industries({ onNavigate }: IndustriesProps) {
 
         .hero-description {
           color: #C5D1D1 !important;
+        }
+
+        .hero-disciplines {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 14px 28px;
+        }
+
+        .hero-discipline {
+          position: relative;
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          padding-bottom: 8px;
+          color: #C9D9C9;
+          font-family: var(--font-serif);
+          font-size: clamp(1.05rem, 2vw, 1.35rem);
+          letter-spacing: -.015em;
+          animation: disciplineIn 700ms both;
+        }
+
+        .hero-discipline::after {
+          content: "";
+          position: absolute;
+          left: 20px;
+          right: 0;
+          bottom: 0;
+          height: 1px;
+          background: linear-gradient(90deg, rgba(140,191,63,.8), transparent);
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform 400ms ease;
+        }
+
+        .hero-discipline:hover::after {
+          transform: scaleX(1);
+        }
+
+        .hero-discipline-dot {
+          width: 7px;
+          height: 7px;
+          flex: 0 0 auto;
+          border-radius: 50%;
+          background: var(--lime);
+          box-shadow: 0 0 14px rgba(140,191,63,.7);
+          animation: disciplinePulse 2.8s ease-in-out infinite;
+        }
+
+        .hero-discipline:nth-child(2) {
+          animation-delay: 100ms;
+        }
+
+        .hero-discipline:nth-child(3) {
+          animation-delay: 200ms;
+        }
+
+        .hero-discipline:nth-child(4) {
+          animation-delay: 300ms;
         }
 
         .industry-card {
@@ -846,6 +896,28 @@ export default function Industries({ onNavigate }: IndustriesProps) {
           from {
             transform: rotate(0deg);
           }
+
+          @keyframes disciplineIn {
+            from {
+              opacity: 0;
+              transform: translateY(12px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          @keyframes disciplinePulse {
+            0%, 100% {
+              opacity: .55;
+              transform: scale(.8);
+            }
+            50% {
+              opacity: 1;
+              transform: scale(1.15);
+            }
+          }
           to {
             transform: rotate(360deg);
           }
@@ -998,28 +1070,24 @@ export default function Industries({ onNavigate }: IndustriesProps) {
             </Reveal>
 
             <Reveal delay={260}>
-              <div className="flex flex-wrap gap-3 mt-10">
+              <div className="hero-disciplines mt-10">
                 {[
                   "Engineering",
                   "Energy Transition",
                   "Digital",
                   "Infrastructure",
                 ].map((item, index) => (
-                  <div
-                    key={item}
-                    className="px-4 py-2 rounded-full text-xs font-semibold"
-                    style={{
-                      color: index % 2 === 0 ? "#B3D979" : "#8ED7D3",
-                      border:
-                        index % 2 === 0
-                          ? "1px solid rgba(140,191,63,.30)"
-                          : "1px solid rgba(84,198,194,.30)",
-                      background:
-                        index % 2 === 0
-                          ? "rgba(140,191,63,.06)"
-                          : "rgba(84,198,194,.06)",
-                    }}
-                  >
+                  <div key={item} className="hero-discipline">
+                    <span
+                      className="hero-discipline-dot"
+                      style={{
+                        background: index % 2 === 0 ? "#8CBF3F" : "#54C6C2",
+                        boxShadow:
+                          index % 2 === 0
+                            ? "0 0 14px rgba(140,191,63,.7)"
+                            : "0 0 14px rgba(84,198,194,.7)",
+                      }}
+                    />
                     {item}
                   </div>
                 ))}
@@ -1058,8 +1126,7 @@ export default function Industries({ onNavigate }: IndustriesProps) {
       <section
         className="py-28 md:py-36"
         style={{
-          background:
-            "linear-gradient(180deg, #071F2A 0%, #092631 100%)",
+          background: "linear-gradient(180deg, #071F2A 0%, #092631 100%)",
         }}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -1112,9 +1179,7 @@ export default function Industries({ onNavigate }: IndustriesProps) {
 
                   <div className="industry-card-overlay" />
 
-                  <div className="industry-card-number">
-                    {industry.number}
-                  </div>
+                  <div className="industry-card-number">{industry.number}</div>
 
                   <div className="industry-card-content">
                     <div
@@ -1214,9 +1279,9 @@ export default function Industries({ onNavigate }: IndustriesProps) {
                     maxWidth: 620,
                   }}
                 >
-                  Examples of how technical advisory, project controls,
-                  digital transformation, and sustainability expertise come
-                  together to solve complex challenges.
+                  Examples of how technical advisory, project controls, digital
+                  transformation, and sustainability expertise come together to
+                  solve complex challenges.
                 </p>
               </div>
             </div>
@@ -1238,9 +1303,7 @@ export default function Industries({ onNavigate }: IndustriesProps) {
                     }}
                     className="filter-button px-5 py-2.5 text-xs font-semibold"
                     style={{
-                      background: active
-                        ? "#8CBF3F"
-                        : "rgba(255,255,255,.025)",
+                      background: active ? "#8CBF3F" : "rgba(255,255,255,.025)",
                       color: active ? "#071F2A" : "#B9C9CA",
                       border: active
                         ? "1px solid #8CBF3F"
@@ -1304,13 +1367,8 @@ export default function Industries({ onNavigate }: IndustriesProps) {
                         {project.industry}
                       </div>
 
-                      <div
-                        className="absolute bottom-5 left-5 right-5 flex justify-between items-end"
-                      >
-                        <div
-                          className="text-xs"
-                          style={{ color: "#B3D979" }}
-                        >
+                      <div className="absolute bottom-5 left-5 right-5 flex justify-between items-end">
+                        <div className="text-xs" style={{ color: "#B3D979" }}>
                           {project.location}
                         </div>
 
@@ -1581,10 +1639,7 @@ export default function Industries({ onNavigate }: IndustriesProps) {
                   color: "#B3D979",
                 },
               ].map(({ title, desc, color }) => (
-                <div
-                  key={title}
-                  className="feature-card p-8 md:p-9"
-                >
+                <div key={title} className="feature-card p-8 md:p-9">
                   <div
                     className="w-9 h-1 mb-7"
                     style={{
@@ -1660,9 +1715,9 @@ export default function Industries({ onNavigate }: IndustriesProps) {
                 maxWidth: 580,
               }}
             >
-              Tell us about your industry context and objectives. We'll show
-              you how McRam can support your project with measurable
-              engineering value.
+              Tell us about your industry context and objectives. We'll show you
+              how McRam can support your project with measurable engineering
+              value.
             </p>
 
             <button

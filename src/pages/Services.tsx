@@ -222,12 +222,10 @@ export default function Services({ onNavigate }: ServicesProps) {
   const scrollToService = (id: string) => {
     setActiveService(id)
 
-    document
-      .getElementById(`service-${id}`)
-      ?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      })
+    document.getElementById(`service-${id}`)?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    })
   }
 
   return (
@@ -244,7 +242,7 @@ export default function Services({ onNavigate }: ServicesProps) {
       {/* ───────────────────────────────────────────────────────────────────── */}
 
       <section
-        className="relative min-h-[640px] flex items-center overflow-hidden engineering-grid"
+        className="service-hero relative min-h-[640px] flex items-center overflow-hidden engineering-grid"
         style={{
           background:
             "radial-gradient(circle at 78% 35%, rgba(140,191,63,0.10), transparent 30%), linear-gradient(135deg, #061A24 0%, #084259 58%, #062B39 100%)",
@@ -316,8 +314,8 @@ export default function Services({ onNavigate }: ServicesProps) {
           }}
         />
 
-        <div className="relative z-10 max-w-7xl mx-auto w-full px-6 lg:px-8 pt-20 pb-18 lg:pt-24 lg:pb-20">
-          <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
+        <div className="relative z-10 max-w-7xl mx-auto w-full px-5 sm:px-6 lg:px-8 pt-16 pb-24 sm:pt-20 sm:pb-24 lg:pt-24 lg:pb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-16 items-center">
             <Reveal>
               <div className="max-w-3xl">
                 <div className="flex items-center gap-3 mb-7">
@@ -342,7 +340,7 @@ export default function Services({ onNavigate }: ServicesProps) {
                   className="mb-8"
                   style={{
                     fontFamily: "var(--font-serif)",
-                    fontSize: "clamp(3rem, 7vw, 6.5rem)",
+                    fontSize: "clamp(2.65rem, 12vw, 6.5rem)",
                     lineHeight: 0.98,
                     letterSpacing: "-0.035em",
                     color: "#F2F2F2",
@@ -364,10 +362,10 @@ export default function Services({ onNavigate }: ServicesProps) {
                   specialized studies and technical execution support.
                 </p>
 
-                <div className="flex flex-wrap gap-4 mt-10">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-8 sm:mt-10">
                   <button
                     onClick={() => scrollToService("consulting")}
-                    className="px-7 py-3.5 font-semibold text-sm transition-all duration-300"
+                    className="w-full sm:w-auto px-7 py-3.5 font-semibold text-sm transition-all duration-300"
                     style={{
                       background: "#8CBF3F",
                       color: "#071E29",
@@ -389,7 +387,7 @@ export default function Services({ onNavigate }: ServicesProps) {
 
                   <button
                     onClick={() => handleNav("contact")}
-                    className="px-7 py-3.5 font-semibold text-sm transition-all duration-300"
+                    className="w-full sm:w-auto px-7 py-3.5 font-semibold text-sm transition-all duration-300"
                     style={{
                       border: "1px solid rgba(242,242,242,0.2)",
                       color: "#F2F2F2",
@@ -440,7 +438,7 @@ export default function Services({ onNavigate }: ServicesProps) {
                   Technical Capability Matrix
                 </div>
 
-                <div className="absolute inset-16 flex flex-col justify-center">
+                <div className="absolute inset-16 flex flex-col justify-center pt-10">
                   <div
                     className="text-[10px] tracking-[0.25em] uppercase mb-8"
                     style={{ color: "rgba(242,242,242,0.45)" }}
@@ -452,7 +450,7 @@ export default function Services({ onNavigate }: ServicesProps) {
                     <button
                       key={service.id}
                       onClick={() => scrollToService(service.id)}
-                      className="group flex items-center gap-4 py-4 text-left transition-all duration-300"
+                      className="group flex items-center gap-4 py-3 text-left transition-all duration-300"
                       style={{
                         borderBottom:
                           index === serviceCategories.length - 1
@@ -500,7 +498,7 @@ export default function Services({ onNavigate }: ServicesProps) {
 
         {/* Bottom metadata */}
         <div
-          className="absolute bottom-0 left-0 right-0 z-10"
+          className="service-hero-meta absolute bottom-0 left-0 right-0 z-10"
           style={{
             borderTop: "1px solid rgba(255,255,255,0.08)",
             background: "rgba(3,24,33,0.35)",
@@ -519,9 +517,7 @@ export default function Services({ onNavigate }: ServicesProps) {
                   className="py-5 px-5"
                   style={{
                     borderLeft:
-                      index === 0
-                        ? "none"
-                        : "1px solid rgba(255,255,255,0.07)",
+                      index === 0 ? "none" : "1px solid rgba(255,255,255,0.07)",
                   }}
                 >
                   <div
@@ -548,15 +544,15 @@ export default function Services({ onNavigate }: ServicesProps) {
       {/* ───────────────────────────────────────────────────────────────────── */}
 
       <section
-        className="sticky top-0 z-30 py-3"
+        className="sticky top-0 z-30 py-2.5 sm:py-3"
         style={{
           background: "rgba(5,29,40,0.94)",
           borderBottom: "1px solid rgba(255,255,255,0.07)",
           backdropFilter: "blur(16px)",
         }}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex gap-2 overflow-x-auto scrollbar-hide">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+          <div className="flex gap-2 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-0.5">
             {serviceCategories.map((service) => {
               const active = activeService === service.id
 
@@ -564,19 +560,13 @@ export default function Services({ onNavigate }: ServicesProps) {
                 <button
                   key={service.id}
                   onClick={() => scrollToService(service.id)}
-                  className="flex-shrink-0 px-4 py-2 text-xs font-semibold tracking-wide transition-all duration-200"
+                  className="flex-shrink-0 snap-start px-3.5 sm:px-4 py-2 text-[11px] sm:text-xs font-semibold tracking-wide transition-all duration-200 whitespace-nowrap"
                   style={{
                     border: `1px solid ${
-                      active
-                        ? service.color
-                        : "rgba(255,255,255,0.09)"
+                      active ? service.color : "rgba(255,255,255,0.09)"
                     }`,
-                    color: active
-                      ? service.color
-                      : "rgba(242,242,242,0.58)",
-                    background: active
-                      ? `${service.color}10`
-                      : "transparent",
+                    color: active ? service.color : "rgba(242,242,242,0.58)",
+                    background: active ? `${service.color}10` : "transparent",
                   }}
                 >
                   <span
@@ -602,8 +592,7 @@ export default function Services({ onNavigate }: ServicesProps) {
       <section
         className="py-24 lg:py-32"
         style={{
-          background:
-            "linear-gradient(180deg, #071E29 0%, #082936 100%)",
+          background: "linear-gradient(180deg, #071E29 0%, #082936 100%)",
         }}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -636,9 +625,7 @@ export default function Services({ onNavigate }: ServicesProps) {
                 >
                   Technical depth.
                   <br />
-                  <span style={{ color: "#8CBF3F" }}>
-                    Practical delivery.
-                  </span>
+                  <span style={{ color: "#8CBF3F" }}>Practical delivery.</span>
                 </h2>
               </div>
 
@@ -647,21 +634,20 @@ export default function Services({ onNavigate }: ServicesProps) {
                   className="text-lg leading-relaxed mb-6"
                   style={{ color: "rgba(242,242,242,0.72)" }}
                 >
-                  Our services are structured around the technical realities
-                  of industrial and engineering projects. Each practice is
-                  designed to connect analysis, design, coordination, and
-                  execution.
+                  Our services are structured around the technical realities of
+                  industrial and engineering projects. Each practice is designed
+                  to connect analysis, design, coordination, and execution.
                 </p>
 
                 <p
                   className="text-sm leading-relaxed"
                   style={{ color: "rgba(242,242,242,0.45)" }}
                 >
-                  Rather than treating engineering disciplines in isolation,
-                  we focus on how individual technical decisions affect the
-                  wider project — helping teams identify constraints early,
-                  resolve complex engineering questions, and deliver with
-                  greater confidence.
+                  Rather than treating engineering disciplines in isolation, we
+                  focus on how individual technical decisions affect the wider
+                  project — helping teams identify constraints early, resolve
+                  complex engineering questions, and deliver with greater
+                  confidence.
                 </p>
 
                 <div
@@ -685,34 +671,30 @@ export default function Services({ onNavigate }: ServicesProps) {
         <section
           key={service.id}
           id={`service-${service.id}`}
-          className="relative scroll-mt-20"
+          className="relative scroll-mt-28 lg:scroll-mt-20"
           style={{
-            background:
-              index % 2 === 0
-                ? "#071E29"
-                : "#082936",
+            background: index % 2 === 0 ? "#071E29" : "#082936",
           }}
         >
           <div
             className="absolute left-0 top-0 bottom-0 hidden lg:block"
             style={{
               width: "3px",
-              background:
-                `linear-gradient(to bottom, transparent, ${service.color}, transparent)`,
+              background: `linear-gradient(to bottom, transparent, ${service.color}, transparent)`,
               opacity: 0.6,
             }}
           />
 
           <div className="max-w-7xl mx-auto">
             <div
-              className="grid grid-cols-1 lg:grid-cols-2"
+              className="grid min-w-0 grid-cols-1 lg:grid-cols-2 lg:min-h-[680px]"
               style={{
-                minHeight: 680,
+                minHeight: undefined,
               }}
             >
               {/* Image */}
               <div
-                className={`relative min-h-[420px] lg:min-h-0 overflow-hidden ${
+                className={`relative min-h-[280px] sm:min-h-[320px] lg:min-h-0 overflow-hidden${
                   index % 2 === 1 ? "lg:order-2" : ""
                 }`}
               >
@@ -785,7 +767,7 @@ export default function Services({ onNavigate }: ServicesProps) {
               {/* Content */}
               <Reveal
                 delay={120}
-                className={`flex flex-col justify-center px-6 py-16 sm:px-10 lg:px-16 xl:px-20 ${
+                className={`flex flex-col justify-center px-5 py-12 sm:px-10 sm:py-14 lg:px-16 lg:py-16 xl:px-20 ${
                   index % 2 === 1 ? "lg:order-1" : ""
                 }`}
               >
@@ -850,7 +832,7 @@ export default function Services({ onNavigate }: ServicesProps) {
                   </p>
 
                   {/* Challenge / Outcome */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-10">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-10">
                     <div>
                       <div className="flex items-center gap-2 mb-3">
                         <span
@@ -925,11 +907,9 @@ export default function Services({ onNavigate }: ServicesProps) {
                             color: "rgba(242,242,242,0.68)",
                           }}
                           onMouseEnter={(e) => {
-                            e.currentTarget.style.borderColor =
-                              `${service.color}60`
+                            e.currentTarget.style.borderColor = `${service.color}60`
                             e.currentTarget.style.color = "#F2F2F2"
-                            e.currentTarget.style.background =
-                              `${service.color}09`
+                            e.currentTarget.style.background = `${service.color}09`
                           }}
                           onMouseLeave={(e) => {
                             e.currentTarget.style.borderColor =
@@ -974,7 +954,7 @@ export default function Services({ onNavigate }: ServicesProps) {
       {/* ───────────────────────────────────────────────────────────────────── */}
 
       <section
-        className="relative py-28 lg:py-36 engineering-grid overflow-hidden"
+        className="relative py-20 sm:py-24 lg:py-36 engineering-grid overflow-hidden"
         style={{
           background:
             "radial-gradient(circle at center, rgba(140,191,63,0.07), transparent 35%), #061A24",
@@ -993,7 +973,7 @@ export default function Services({ onNavigate }: ServicesProps) {
 
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <Reveal>
-            <div className="max-w-2xl mb-20">
+            <div className="max-w-2xl mb-12 sm:mb-16 lg:mb-20">
               <div className="flex items-center gap-3 mb-5">
                 <span
                   style={{
@@ -1021,9 +1001,7 @@ export default function Services({ onNavigate }: ServicesProps) {
               >
                 From challenge
                 <br />
-                <span style={{ color: "#8CBF3F" }}>
-                  to engineered outcome.
-                </span>
+                <span style={{ color: "#8CBF3F" }}>to engineered outcome.</span>
               </h2>
             </div>
           </Reveal>
@@ -1041,19 +1019,14 @@ export default function Services({ onNavigate }: ServicesProps) {
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-6">
                 {process.map((item, index) => (
-                  <div
-                    key={item.step}
-                    className="relative group"
-                  >
+                  <div key={item.step} className="relative group">
                     <div className="flex lg:block items-start gap-5">
                       <div
                         className="relative flex-shrink-0 w-[72px] h-[72px] rounded-full flex flex-col items-center justify-center transition-all duration-300 group-hover:scale-105"
                         style={{
                           background: "#061A24",
                           border: `1px solid ${
-                            index === 2
-                              ? "#8CBF3F"
-                              : "rgba(140,191,63,0.35)"
+                            index === 2 ? "#8CBF3F" : "rgba(140,191,63,0.35)"
                           }`,
                           boxShadow:
                             index === 2
@@ -1098,7 +1071,7 @@ export default function Services({ onNavigate }: ServicesProps) {
       {/* ───────────────────────────────────────────────────────────────────── */}
 
       <section
-        className="py-24 lg:py-32"
+        className="py-20 sm:py-24 lg:py-32"
         style={{
           background: "#082936",
           borderTop: "1px solid rgba(255,255,255,0.05)",
@@ -1106,7 +1079,7 @@ export default function Services({ onNavigate }: ServicesProps) {
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <Reveal>
-            <div className="grid grid-cols-1 lg:grid-cols-[0.75fr_1.25fr] gap-16">
+            <div className="grid grid-cols-1 lg:grid-cols-[0.75fr_1.25fr] gap-10 lg:gap-16">
               <div>
                 <div className="flex items-center gap-3 mb-5">
                   <span
@@ -1135,9 +1108,7 @@ export default function Services({ onNavigate }: ServicesProps) {
                 >
                   One engineering
                   <br />
-                  <span style={{ color: "#8CBF3F" }}>
-                    partner. Multiple
-                  </span>
+                  <span style={{ color: "#8CBF3F" }}>partner. Multiple</span>
                   <br />
                   disciplines.
                 </h2>
@@ -1163,20 +1134,17 @@ export default function Services({ onNavigate }: ServicesProps) {
                     <button
                       key={service.id}
                       onClick={() => scrollToService(service.id)}
-                      className="group text-left p-6 lg:p-8 transition-all duration-300"
+                      className="group text-left p-5 sm:p-6 lg:p-8 transition-all duration-300"
                       style={{
                         borderRight: "1px solid rgba(255,255,255,0.09)",
-                        borderBottom:
-                          "1px solid rgba(255,255,255,0.09)",
+                        borderBottom: "1px solid rgba(255,255,255,0.09)",
                         background: "transparent",
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.background =
-                          `${service.color}08`
+                        e.currentTarget.style.background = `${service.color}08`
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.background =
-                          "transparent"
+                        e.currentTarget.style.background = "transparent"
                       }}
                     >
                       <div className="flex items-start justify-between gap-4">
@@ -1222,7 +1190,7 @@ export default function Services({ onNavigate }: ServicesProps) {
       {/* ───────────────────────────────────────────────────────────────────── */}
 
       <section
-        className="relative py-28 lg:py-36 overflow-hidden"
+        className="relative py-20 sm:py-24 lg:py-36 overflow-hidden"
         style={{
           background:
             "linear-gradient(135deg, #061A24 0%, #084259 50%, #061A24 100%)",
@@ -1293,9 +1261,7 @@ export default function Services({ onNavigate }: ServicesProps) {
             >
               Have a complex
               <br />
-              <span style={{ color: "#8CBF3F" }}>
-                engineering challenge?
-              </span>
+              <span style={{ color: "#8CBF3F" }}>engineering challenge?</span>
             </h2>
 
             <p
@@ -1307,10 +1273,10 @@ export default function Services({ onNavigate }: ServicesProps) {
               together.
             </p>
 
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
               <button
                 onClick={() => handleNav("contact")}
-                className="px-8 py-4 font-semibold text-sm transition-all duration-300"
+                className="w-full sm:w-auto px-8 py-4 font-semibold text-sm transition-all duration-300"
                 style={{
                   background: "#8CBF3F",
                   color: "#071E29",
@@ -1328,20 +1294,18 @@ export default function Services({ onNavigate }: ServicesProps) {
 
               <button
                 onClick={() => handleNav("industries")}
-                className="px-8 py-4 font-semibold text-sm transition-all duration-300"
+                className="w-full sm:w-auto px-8 py-4 font-semibold text-sm transition-all duration-300"
                 style={{
                   border: "1px solid rgba(242,242,242,0.16)",
                   color: "#F2F2F2",
                   background: "rgba(255,255,255,0.02)",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor =
-                    "rgba(140,191,63,0.45)"
+                  e.currentTarget.style.borderColor = "rgba(140,191,63,0.45)"
                   e.currentTarget.style.color = "#8CBF3F"
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor =
-                    "rgba(242,242,242,0.16)"
+                  e.currentTarget.style.borderColor = "rgba(242,242,242,0.16)"
                   e.currentTarget.style.color = "#F2F2F2"
                 }}
               >
@@ -1399,6 +1363,57 @@ export default function Services({ onNavigate }: ServicesProps) {
 
         .scrollbar-hide::-webkit-scrollbar {
           display: none;
+        }
+
+        .service-hero-meta {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+        }
+
+        .service-hero .absolute {
+          position: absolute;
+        }
+
+        @media (max-width: 639px) {
+          .service-hero {
+            min-height: 0;
+            display: block;
+          }
+
+          .service-hero .service-hero-meta {
+            position: relative;
+            right: auto;
+            bottom: auto;
+            left: auto;
+            width: 100%;
+            margin-top: 0;
+          }
+
+          .service-hero .service-hero-meta > div {
+            padding-left: 0.75rem;
+            padding-right: 0.75rem;
+          }
+
+          .service-hero .service-hero-meta .grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+          }
+
+          .service-hero .service-hero-meta .grid > div {
+            min-width: 0;
+            padding: 1rem 0.75rem;
+          }
+
+          .service-hero .service-hero-meta .grid > div:nth-child(3) {
+            border-left: 0;
+            border-top: 1px solid rgba(255,255,255,0.07);
+          }
+
+          .service-hero .service-hero-meta .grid > div:nth-child(4) {
+            border-top: 1px solid rgba(255,255,255,0.07);
+          }
         }
       `}</style>
     </div>
