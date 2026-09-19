@@ -6,10 +6,6 @@ interface AboutProps {
   onNavigate: (page: Page) => void
 }
 
-/* ─────────────────────────────────────────────────────────────────────────── */
-/* Scroll reveal                                                               */
-/* ─────────────────────────────────────────────────────────────────────────── */
-
 function useScrollReveal() {
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)
@@ -176,9 +172,6 @@ const capabilities = [
   "Engineering Documentation",
 ]
 
-/* ─────────────────────────────────────────────────────────────────────────── */
-/* Component                                                                   */
-/* ─────────────────────────────────────────────────────────────────────────── */
 
 export default function About({ onNavigate }: AboutProps) {
   const [activeValue, setActiveValue] = useState<string | null>(null)
@@ -197,14 +190,10 @@ export default function About({ onNavigate }: AboutProps) {
         overflow: "hidden",
       }}
     >
-      {/* ───────────────────────────────────────────────────────────────────── */}
-      {/* HERO                                                                  */}
-      {/* ───────────────────────────────────────────────────────────────────── */}
-
       <section
         className="relative overflow-hidden engineering-grid"
         style={{
-          minHeight: "620px",
+          minHeight: "560px",
           background:
             "radial-gradient(circle at 78% 35%, rgba(140,191,63,0.09), transparent 30%), linear-gradient(135deg, #061A24 0%, #084259 60%, #062B39 100%)",
         }}
@@ -257,7 +246,7 @@ export default function About({ onNavigate }: AboutProps) {
 
         {/* Decorative ring */}
         <div
-          className="absolute right-[-150px] top-[70px] w-[520px] h-[520px] rounded-full pointer-events-none"
+          className="absolute right-[-150px] top-[70px] w-[520px] h-[120px] rounded-full pointer-events-none"
           style={{
             border: "1px solid rgba(140,191,63,0.12)",
             boxShadow:
@@ -265,8 +254,8 @@ export default function About({ onNavigate }: AboutProps) {
           }}
         />
 
-       <div className="relative z-10 max-w-7xl mx-auto w-full px-6 lg:px-8 pt-16 pb-20 lg:pt-20 lg:pb-20">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+       <div className="relative z-10 max-w-7xl mx-auto w-full px-6 lg:px-8 pt-12 pb-16 lg:pt-16 lg:pb-16">
+        <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">
             <Reveal>
               <div className="max-w-3xl">
                 <div className="flex items-center gap-3 mb-7">
@@ -477,9 +466,6 @@ export default function About({ onNavigate }: AboutProps) {
         </div>
       </section>
 
-      {/* ───────────────────────────────────────────────────────────────────── */}
-      {/* COMPANY OVERVIEW                                                       */}
-      {/* ───────────────────────────────────────────────────────────────────── */}
 
       <section
         className="py-24 lg:py-32"
@@ -645,26 +631,14 @@ export default function About({ onNavigate }: AboutProps) {
         </div>
       </section>
 
-      {/* ───────────────────────────────────────────────────────────────────── */}
-      {/* MISSION / VISION                                                       */}
-      {/* ───────────────────────────────────────────────────────────────────── */}
 
       <section
-        className="relative py-20 lg:py-24 engineering-grid overflow-hidden"
+        className="relative py-16 lg:py-20 engineering-grid overflow-hidden"
         style={{
           background:
             "radial-gradient(circle at 50% 50%, rgba(140,191,63,0.055), transparent 38%), #082936",
         }}
       >
-        <div
-          className="absolute left-1/2 top-1/2 w-[650px] h-[650px] rounded-full pointer-events-none"
-          style={{
-            transform: "translate(-50%, -50%)",
-            border: "1px solid rgba(140,191,63,0.05)",
-            boxShadow:
-              "0 0 0 90px rgba(140,191,63,0.012), 0 0 0 180px rgba(140,191,63,0.008)",
-          }}
-        />
 
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <Reveal>
@@ -783,17 +757,13 @@ export default function About({ onNavigate }: AboutProps) {
         </div>
       </section>
 
-      {/* ───────────────────────────────────────────────────────────────────── */}
-      {/* VALUES                                                                 */}
-      {/* ───────────────────────────────────────────────────────────────────── */}
-
       <section
-        className="py-28 lg:py-36"
+        className="py-20 lg:py-24"
         style={{ background: "#071E29" }}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <Reveal>
-            <div className="grid grid-cols-1 lg:grid-cols-[0.65fr_1.35fr] gap-16 mb-16 items-end">
+            <div className="grid grid-cols-1 lg:grid-cols-[0.65fr_1.35fr] gap-12 mb-12 items-end">
               <div>
                 <div className="flex items-center gap-3 mb-5">
                   <span
@@ -922,12 +892,9 @@ export default function About({ onNavigate }: AboutProps) {
         </div>
       </section>
 
-      {/* ───────────────────────────────────────────────────────────────────── */}
-      {/* ENGINEERING CAPABILITIES                                               */}
-      {/* ───────────────────────────────────────────────────────────────────── */}
 
       <section
-        className="py-24 lg:py-32 engineering-grid"
+        className="py-20 lg:py-24 engineering-grid"
         style={{ background: "#082936" }}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -1046,12 +1013,9 @@ export default function About({ onNavigate }: AboutProps) {
         </div>
       </section>
 
-      {/* ───────────────────────────────────────────────────────────────────── */}
-      {/* JOURNEY                                                                */}
-      {/* ───────────────────────────────────────────────────────────────────── */}
 
       <section
-        className="py-28 lg:py-36"
+        className="py-20 lg:py-24"
         style={{ background: "#071E29" }}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -1169,12 +1133,9 @@ export default function About({ onNavigate }: AboutProps) {
         </div>
       </section>
 
-      {/* ───────────────────────────────────────────────────────────────────── */}
-      {/* LEADERSHIP                                                             */}
-      {/* ───────────────────────────────────────────────────────────────────── */}
 
       <section
-        className="py-28 lg:py-36 engineering-grid"
+        className="py-20 lg:py-24 engineering-grid"
         style={{ background: "#082936" }}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -1311,12 +1272,8 @@ export default function About({ onNavigate }: AboutProps) {
         </div>
       </section>
 
-      {/* ───────────────────────────────────────────────────────────────────── */}
-      {/* GLOBAL CAPABILITY                                                      */}
-      {/* ───────────────────────────────────────────────────────────────────── */}
-
       <section
-        className="py-28 lg:py-36"
+        className="py-20 lg:py-24"
         style={{ background: "#071E29" }}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -1489,19 +1446,16 @@ export default function About({ onNavigate }: AboutProps) {
         </div>
       </section>
 
-      {/* ───────────────────────────────────────────────────────────────────── */}
-      {/* STATEMENT                                                              */}
-      {/* ───────────────────────────────────────────────────────────────────── */}
 
       <section
-        className="relative py-28 lg:py-36 overflow-hidden engineering-grid"
+        className="relative py-20 lg:py-24 overflow-hidden engineering-grid"
         style={{
           background:
             "radial-gradient(circle at center, rgba(140,191,63,0.08), transparent 42%), #082936",
         }}
       >
         <div
-          className="absolute left-1/2 top-1/2 w-[420px] h-[420px] rounded-full pointer-events-none"
+          className="absolute left-1/2 top-1/2 w-[10px] h-[10px] rounded-full pointer-events-none"
           style={{
             transform: "translate(-50%, -50%)",
             border: "1px solid rgba(140,191,63,0.08)",
@@ -1561,12 +1515,9 @@ export default function About({ onNavigate }: AboutProps) {
         </div>
       </section>
 
-      {/* ───────────────────────────────────────────────────────────────────── */}
-      {/* CAREERS / CTA                                                          */}
-      {/* ───────────────────────────────────────────────────────────────────── */}
 
       <section
-        className="relative py-28 lg:py-36 overflow-hidden"
+        className="relative py-20 lg:py-24 overflow-hidden"
         style={{
           background:
             "linear-gradient(135deg, #061A24 0%, #084259 55%, #061A24 100%)",
@@ -1724,10 +1675,6 @@ export default function About({ onNavigate }: AboutProps) {
           </div>
         </div>
       </section>
-
-      {/* ───────────────────────────────────────────────────────────────────── */}
-      {/* Animation styles                                                       */}
-      {/* ───────────────────────────────────────────────────────────────────── */}
 
       <style>{`
         @keyframes aboutScan {

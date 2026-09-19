@@ -661,7 +661,7 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* ─── OFFICES ──────────────────────────────────────────────── */}
+      {/* ─── OFFICES ────────────────────────────────────────────────
       <section
         className="py-28 engineering-grid"
         style={{ background: "#084259" }}
@@ -758,7 +758,7 @@ export default function Contact() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ─── MAP / VISUAL ─────────────────────────────────────────── */}
       <section

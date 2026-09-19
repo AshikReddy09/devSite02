@@ -20,7 +20,7 @@ export default function Navigation({ currentPage, onNavigate }: NavProps) {
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40)
+    const onScroll = () => setScrolled(window.scrollY > 24)
     window.addEventListener("scroll", onScroll, { passive: true })
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
@@ -36,7 +36,7 @@ export default function Navigation({ currentPage, onNavigate }: NavProps) {
 
   return (
     <header
-      className="nav-shell"
+      className={`nav-shell ${scrolled ? "is-scrolled" : ""}`}
       style={{
         background: "#F2F2F2",
         borderBottom: "1px solid rgba(8, 66, 89, 0.12)",
