@@ -314,7 +314,7 @@ export default function Services({ onNavigate }: ServicesProps) {
           }}
         />
 
-        <div className="relative z-10 max-w-7xl mx-auto w-full px-5 sm:px-6 lg:px-8 pt-16 pb-24 sm:pt-20 sm:pb-24 lg:pt-24 lg:pb-20">
+        <div className="relative z-10 max-w-7xl mx-auto w-full px-5 sm:px-6 lg:px-8 pt-16 pb-24 sm:pt-20 sm:pb-24 lg:pt-24 lg:pb-28">
           <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-16 items-center">
             <Reveal>
               <div className="max-w-3xl">
@@ -687,14 +687,18 @@ export default function Services({ onNavigate }: ServicesProps) {
 
           <div className="max-w-7xl mx-auto">
             <div
-              className="grid min-w-0 grid-cols-1 lg:grid-cols-2 lg:min-h-[680px]"
+              className={`grid min-w-0 grid-cols-1 lg:min-h-[600px] ${
+                index % 2 === 1
+                  ? "lg:grid-cols-[1.18fr_0.82fr]"
+                  : "lg:grid-cols-[0.82fr_1.18fr]"
+              }`}
               style={{
                 minHeight: undefined,
               }}
             >
               {/* Image */}
               <div
-                className={`relative min-h-[280px] sm:min-h-[320px] lg:min-h-0 overflow-hidden${
+                className={`relative aspect-[5/4] w-full min-h-[280px] max-h-[480px] self-center overflow-hidden sm:min-h-[320px] lg:min-h-0${
                   index % 2 === 1 ? "lg:order-2" : ""
                 }`}
               >
@@ -954,7 +958,7 @@ export default function Services({ onNavigate }: ServicesProps) {
       {/* ───────────────────────────────────────────────────────────────────── */}
 
       <section
-        className="relative py-20 sm:py-24 lg:py-36 engineering-grid overflow-hidden"
+        className="relative py-16 sm:py-20 lg:py-24 engineering-grid overflow-hidden"
         style={{
           background:
             "radial-gradient(circle at center, rgba(140,191,63,0.07), transparent 35%), #061A24",
@@ -962,8 +966,11 @@ export default function Services({ onNavigate }: ServicesProps) {
       >
         {/* Background rings */}
         <div
-          className="absolute left-1/2 top-1/2 w-[600px] h-[600px] rounded-full pointer-events-none"
+          className="w-[600px] h-[600px] rounded-full pointer-events-none"
           style={{
+            position: "absolute",
+            left: "50%",
+            top: "50%",
             transform: "translate(-50%, -50%)",
             border: "1px solid rgba(140,191,63,0.06)",
             boxShadow:
@@ -973,7 +980,7 @@ export default function Services({ onNavigate }: ServicesProps) {
 
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <Reveal>
-            <div className="max-w-2xl mb-12 sm:mb-16 lg:mb-20">
+            <div className="max-w-2xl mb-10 sm:mb-12 lg:mb-14">
               <div className="flex items-center gap-3 mb-5">
                 <span
                   style={{

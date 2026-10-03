@@ -246,7 +246,7 @@ const projects = [
   },
 ]
 
-const filters: { id: Filter label: string }[] = [
+const filters: { id: Filter; label: string }[] = [
   { id: "all", label: "All Projects" },
   { id: "energy", label: "Energy" },
   { id: "infrastructure", label: "Infrastructure" },
@@ -466,40 +466,6 @@ export default function Industries({ onNavigate }: IndustriesProps) {
           animation: ambientFloat 10s ease-in-out infinite;
         }
 
-        .hero-orb {
-          position: absolute;
-          border-radius: 50%;
-          pointer-events: none;
-          filter: blur(1px);
-          animation: ambientFloat 8s ease-in-out infinite;
-        }
-
-        .hero-orb-one {
-          width: 420px;
-          height: 420px;
-          right: -160px;
-          top: 60px;
-          background: radial-gradient(
-            circle,
-            rgba(140,191,63,.20) 0%,
-            rgba(140,191,63,.03) 55%,
-            transparent 72%
-          );
-        }
-
-        .hero-orb-two {
-          width: 280px;
-          height: 280px;
-          right: 28%;
-          bottom: -140px;
-          background: radial-gradient(
-            circle,
-            rgba(84,198,194,.16) 0%,
-            transparent 70%
-          );
-          animation-delay: -3s;
-        }
-
         .hero-scanline {
           position: absolute;
           left: 0;
@@ -705,6 +671,8 @@ export default function Industries({ onNavigate }: IndustriesProps) {
           position: relative;
           overflow: hidden;
           height: 100%;
+          display: flex;
+          flex-direction: column;
           background: #0A2B38;
           border: 1px solid rgba(255,255,255,.09);
           transition:
@@ -721,6 +689,21 @@ export default function Industries({ onNavigate }: IndustriesProps) {
 
         .project-image {
           transition: transform 900ms cubic-bezier(.2,.8,.2,1);
+        }
+
+        .project-image-frame {
+          height: clamp(240px, 19vw, 320px);
+          flex: 0 0 auto;
+        }
+
+        .project-card-content {
+          display: flex;
+          flex: 1;
+          flex-direction: column;
+        }
+
+        .project-card-footer {
+          margin-top: auto;
         }
 
         .project-card:hover .project-image {
@@ -932,8 +915,14 @@ export default function Industries({ onNavigate }: IndustriesProps) {
             padding: 26px;
           }
 
-          .hero-orb-one {
-            right: -250px;
+          .project-image-frame {
+            height: 245px;
+          }
+        }
+
+        @media (min-width: 1600px) {
+          .project-image-frame {
+            height: 320px;
           }
         }
 
@@ -964,13 +953,13 @@ export default function Industries({ onNavigate }: IndustriesProps) {
       >
         <div className="hero-scanline" />
 
-        <div className="hero-orb hero-orb-one" />
-        <div className="hero-orb hero-orb-two" />
-
         {/* Hero image */}
         <div
-          className="absolute inset-0 pointer-events-none"
+          className="pointer-events-none"
           style={{
+            position: "absolute",
+            inset: 0,
+            pointerEvents: "none",
             transform: `translate3d(${heroMouse.x * -0.25}px, ${
               heroMouse.y * -0.25
             }px, 0) scale(1.05)`,
@@ -978,20 +967,27 @@ export default function Industries({ onNavigate }: IndustriesProps) {
           }}
         >
           <img
-            src="public/backgrounds/projects-hero.jpg"
+            src={`${import.meta.env.BASE_URL}backgrounds/projects-hero.jpg`}
             alt=""
-            className="w-full h-full object-cover"
+            className=""
             style={{
-              opacity: 90,
-              filter: "saturate(.65)",
+              display: "block",
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              opacity: 0.92,
+              objectPosition: "center 54%",
+              filter: "saturate(.9) contrast(1.06)",
             }}
           />
 
           <div
-            className="absolute inset-0"
+            className=""
             style={{
+              position: "absolute",
+              inset: 0,
               background:
-                "linear-gradient(90deg, rgba(6,27,37,.98) 0%, rgba(6,27,37,.88) 46%, rgba(6,27,37,.42) 100%)",
+                "linear-gradient(90deg, rgba(6,27,37,.82) 0%, rgba(6,27,37,.70) 42%, rgba(6,27,37,.58) 100%), linear-gradient(0deg, rgba(6,27,37,.40) 0%, transparent 48%)",
             }}
           />
         </div>
@@ -1251,7 +1247,7 @@ export default function Industries({ onNavigate }: IndustriesProps) {
           background: "#0A2B38",
         }}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-[1520px] mx-auto px-6 lg:px-10">
           <Reveal>
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-14">
               <div className="max-w-3xl">
@@ -1318,7 +1314,7 @@ export default function Industries({ onNavigate }: IndustriesProps) {
           </Reveal>
 
           {/* Project grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 xl:gap-7">
             {filteredProjects.map((project, index) => {
               const expanded = expandedProject === project.id
 
@@ -1332,9 +1328,8 @@ export default function Industries({ onNavigate }: IndustriesProps) {
                   >
                     {/* Image */}
                     <div
-                      className="relative overflow-hidden"
+                      className="project-image-frame relative overflow-hidden"
                       style={{
-                        height: 245,
                         background: "#071F2A",
                       }}
                     >
@@ -1390,7 +1385,7 @@ export default function Industries({ onNavigate }: IndustriesProps) {
                     </div>
 
                     {/* Content */}
-                    <div className="p-6 md:p-7">
+                    <div className="project-card-content p-6 md:p-7 xl:p-8">
                       <h3
                         className="font-semibold text-lg leading-snug mb-6"
                         style={{
@@ -1480,7 +1475,7 @@ export default function Industries({ onNavigate }: IndustriesProps) {
                       </div>
 
                       <div
-                        className="flex items-center justify-between mt-6 pt-2"
+                        className="project-card-footer flex items-center justify-between mt-6 pt-2"
                         style={{
                           color: project.color,
                         }}
