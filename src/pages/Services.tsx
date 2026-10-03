@@ -159,7 +159,7 @@ const serviceCategories = [
     id: "digital",
     number: "05",
     icon: "◉",
-    title: "Technical Engineering Support",
+    title: "Process Technology",
     shortTitle: "Support",
     tagline: "Dependable support for project execution.",
     image: "photo-1518770660439-4636190af475",
@@ -428,7 +428,7 @@ export default function Services({ onNavigate }: ServicesProps) {
                 />
 
                 <div
-                  className="absolute top-20 right-20 px-4 py-2 text-[10px] tracking-[0.2em] uppercase"
+                  className="absolute top-7 right-20 px-4 py-2 text-[10px] tracking-[0.2em] uppercase"
                   style={{
                     background: "#8CBF3F",
                     color: "#071E29",

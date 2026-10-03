@@ -978,11 +978,11 @@ export default function Industries({ onNavigate }: IndustriesProps) {
           }}
         >
           <img
-            src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=2000&h=1100&fit=crop&auto=format"
+            src="public/backgrounds/projects-hero.jpg"
             alt=""
             className="w-full h-full object-cover"
             style={{
-              opacity: 0.18,
+              opacity: 90,
               filter: "saturate(.65)",
             }}
           />
@@ -1513,7 +1513,7 @@ export default function Industries({ onNavigate }: IndustriesProps) {
           IMPACT
       ===================================================== */}
 
-      <section
+      {/* <section
         className="py-28 md:py-36 relative overflow-hidden"
         style={{
           background: "#071F2A",
@@ -1619,7 +1619,6 @@ export default function Industries({ onNavigate }: IndustriesProps) {
             ))}
           </div>
 
-          {/* Feature cards */}
           <Reveal delay={100}>
             <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-5">
               {[
@@ -1669,7 +1668,7 @@ export default function Industries({ onNavigate }: IndustriesProps) {
             </div>
           </Reveal>
         </div>
-      </section>
+      </section> */}
 
       {/* =====================================================
           CTA

@@ -8,11 +8,10 @@ interface HomeProps {
 
 const partnerLogos = [
   "Oil & Gas",
+  "Offshore",
   "Petrochemical",
   "Power",
-  "Water",
   "Utilities",
-  "Offshore",
 ]
 
 const stats = [
@@ -232,17 +231,16 @@ export default function Home({ onNavigate }: HomeProps) {
             </p>
 
             <h1 className="hero-title">
-              Engineering Excellence.
-              <span>Built on Expertise.</span>
+              Engineering Expertise.
+              <span>Practical Solutions</span>
             </h1>
 
             <p className="hero-text">
-              Integrated engineering solutions for complex EPC and industrial
-              projects. We combine technical expertise, advanced engineering
-              tools, and practical project experience to deliver with
-              precision, efficiency, and confidence.
+              McRam Engineering Solutions is a multidisciplinary engineering consultancy supporting EPC projects across oil and gas, energy, and industrial sectors. We combine strong technical analysis with practical design, helping clients de-risk projects, meet international standards, and deliver on schedule.
             </p>
-
+            <p className="hero-text">
+              From piping and structural engineering, FEA, and specialized studies, our teams turn complex challenges into buildable solutions.
+            </p>
             <button
               className="primary-button hero-button"
               type="button"
@@ -266,7 +264,7 @@ export default function Home({ onNavigate }: HomeProps) {
 
         <div className="partners-wrap">
           <div className="container partners">
-            <span className="partners-label">Our Partners:</span>
+            <span className="partners-label">Our Industry focus:</span>
 
             <div className="partner-logos" aria-label="Brand partners">
               {partnerLogos.map((logo, index) => (
@@ -425,10 +423,9 @@ export default function Home({ onNavigate }: HomeProps) {
             </h2>
 
             <p>
-              McRam brings together experienced professionals and practical
-              project knowledge to support clients through complex engineering
-              requirements with quality and reliability.
+              McRam is led by engineers with hands-on experience across EPC projects worldwide. Our leadership combines technical depth with a clear commitment to quality, safety, and long-term client partnerships.
             </p>
+            <p>Our engineering team Technical expertise behind every deliverable.</p>
 
             <button
               type="button"
@@ -797,6 +794,7 @@ export default function Home({ onNavigate }: HomeProps) {
 
         .hero-eyebrow {
           animation: heroReveal .9s .15s both;
+          font-size: 40px;
         }
 
         .hero-title {
