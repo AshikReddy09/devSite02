@@ -1,7 +1,5 @@
 # DevSite
 
-Website for McRam Engineering Solutions, an engineering consultancy delivering integrated, reliable, and value-driven solutions across the EPC sector.
-
 ## Local development
 
 Requirements: Node.js 22 or newer.
