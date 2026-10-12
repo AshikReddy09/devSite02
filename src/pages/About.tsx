@@ -203,7 +203,7 @@ export default function About({ onNavigate }: AboutProps) {
           className="absolute inset-0"
           style={{
             backgroundImage:
-              "url(https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=2000&h=1200&fit=crop&auto=format)",
+              "url(public/backgrounds/about_filer1.jpg)",
             backgroundSize: "cover",
             backgroundPosition: "center",
             opacity: 0.16,
@@ -483,7 +483,7 @@ export default function About({ onNavigate }: AboutProps) {
                 />
 
                 <img
-                  src="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?w=1000&h=750&fit=crop&auto=format"
+                  src="public/images/linear.jpg"
                   alt="McRam engineering team working together"
                   className="w-full object-cover"
                   style={{
@@ -1357,7 +1357,7 @@ export default function About({ onNavigate }: AboutProps) {
                 }}
               >
                 <img
-                  src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=1000&h=650&fit=crop&auto=format"
+                  src="public/backgrounds/about-filer2.jpg"
                   alt="Global engineering operations"
                   className="absolute inset-0 w-full h-full object-cover"
                   style={{

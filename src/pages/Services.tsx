@@ -71,88 +71,94 @@ const serviceCategories = [
     id: "consulting",
     number: "01",
     icon: "◈",
-    title: "Piping Engineering",
+    title: "Piping Engineering & 3d modeling",
     shortTitle: "Piping",
-    tagline: "Practical engineering for complex projects.",
-    image: "photo-1454165804606-c3d57bc86b40",
+    tagline: "Every line routed, analysed and ready to build.",
+    image: "public/images/piping_eng_3d_model.jpg",
     color: "#8CBF3F",
     challenge:
-      "Complex EPC and industrial projects require coordinated, practical engineering from concept through execution.",
+      "Congested layouts must satisfy routing, stress, support and construction requirements together. Late clashes or overstressed lines lead to rework.",
     outcome:
       "Accurate engineering deliverables, coordinated design decisions, and dependable support aligned with project requirements.",
     capabilities: [
-      "Piping layout and 3D modelling",
-      "Piping support arrangement drawings",
-      "Support detailing and validation",
-      "Isometric preparation",
-      "SP PID preparation",
-      "3D laser scan model conversion and clash studies",
+      "Plot plan, equipment layout and piping routing",
+      "3D modelling and model reviews",
+      "Piping GA drawings, isometrics and MTOs",
+      "Piping material specifications and line lists",
+      "Pipe stress analysis and flexibility studiesn",
+      "Pipe support design and engineering",
+      "Nozzle load checks and equipment connection evaluation",
+      "Clash detection and resolution",
     ],
   },
   {
     id: "engineering",
     number: "02",
     icon: "⬡",
-    title: "Piping Stress Analysis",
-    shortTitle: "Stress",
-    tagline: "Deep technical expertise, independent advice.",
-    image: "photo-1581094271901-8022df4466f9",
+    title: "Pipe Line Engineering",
+    shortTitle: "PipeLine",
+    tagline: "Safe, reliable pipelines engineered for the long haul.",
+    image: "public/images/exp_pipingStress.png",
     color: "#5E9BB2",
     challenge:
-      "Piping systems must remain safe and reliable under operating, occasional, thermal, and dynamic loading conditions.",
+      "Cross-country and facility pipelines face varying terrain, pressures, soil conditions, thermal loads and regulatory demands. Each of these affects integrity over the asset’s life.",
     outcome:
-      "Technically robust piping systems with verified flexibility, support adequacy, and compliance with project requirements.",
+      "Code-compliant pipeline designs that balance safety, constructability and lifecycle cost, ready for permitting and execution.",
     capabilities: [
-      "Piping stress analysis for storage tanks and pipelines",
-      "Flexibility and support assessment",
-      "Buried piping systems",
-      "Surge and slug analysis",
-      "FRP and GRE systems",
-      "Expansion joint assessment",
+      "Route selection and alignment engineering",
+      "Wall thickness and hydraulic calculations",
+      "Pipeline stress and buried pipe analysis",
+      "Crossing design (road, rail, river)",
+      "Design to ASME B31.4, B31.8 and related standards",
     ],
   },
   {
     id: "ppm",
     number: "03",
     icon: "⬢",
-    title: "Structural Analysis & FEA",
+    title: "Civil & Structural Engineering(STAAD & SAACS)",
     shortTitle: "Structural",
-    tagline: "Delivering complex projects with precision.",
-    image: "photo-1504307651254-35680f356dfd",
+    tagline: "Strong foundations and structures for demanding industrial plants.",
+    image: "public/images/fea analysis.png",
     color: "#6FA8BC",
     challenge:
-      "Structural and finite element analysis help confirm that engineering designs remain safe, stable, and fit for service.",
+      "Heavy equipment, pipe racks and dynamic loads demand structures that are safe, economical and coordinated with piping. Late load changes cause redesign.",
     outcome:
-      "Validated structural solutions supported by disciplined modelling, analysis, and technical reporting.",
+      "Verified structural designs that carry the loads, align with piping and equipment, and issue as construction-ready drawings.",
     capabilities: [
-      "SACS and STAAD Pro analysis",
-      "Finite element analysis",
-      "Structural assessment",
-      "Blast, onsite, and transportation conditions",
-      "Support and steel design review",
-      "Technical documentation",
+      "Structural analysis and design using STAAD Pro and SACS",
+      "Pipe racks, steel structures and platforms",
+      "Offshore and topside structural assessment (SACS)",
+      "Foundation design for equipment and structures",
+      "Pipe support and equipment skid structural design",
+      "Load combination studies, including blast and transportation cases",
+      "Civil layout, grading and drainage",
+      "Detailed drawings and bills of quantities",
     ],
   },
   {
     id: "transition",
     number: "04",
     icon: "◇",
-    title: "Specialized Engineering Studies",
+    title: "Static Equipment Design",
     shortTitle: "Specialized",
-    tagline: "Focused analysis for demanding requirements.",
-    image: "photo-1509391366360-2e959784a276",
+    tagline: "Pressure equipment designed right, from datasheet to fabrication.",
+    image: "public/images/usfos.jpg",
     color: "#8CBF3F",
     challenge:
-      "Specialized engineering questions require focused studies, the right tools, and clear interpretation of results.",
+      "Vessels, exchangers and tanks operate under high pressure, temperature and nozzle loads. Design must meet code requirements while keeping weight and cost in check.",
     outcome:
-      "Clear technical insight that helps project teams resolve risk, improve design decisions, and move execution forward.",
+      "Code-compliant equipment designs with verified nozzle and support loads, delivered as fabrication-ready drawings and datasheets.",
     capabilities: [
-      "USFOS studies",
-      "CFD studies",
-      "3D scan model conversion",
-      "Clash detection",
-      "Engineering calculations",
-      "Technical support and manpower supply",
+      "Pressure vessel design and analysis using PV Elite",
+      "Heat exchanger, reboiler and column design",
+      "Storage tank design to API 650",
+      "Shell, head and nozzle thickness calculations",
+      "Nozzle load and local stress evaluation (WRC 107/537)",
+      "Wind, seismic and transportation load checks",
+      "Support design: skirts, saddles, lugs and legs",
+      "Design to ASME Section VIII, TEMA and API codes",
+      "Fabrication drawings and datasheets",
     ],
   },
   {
@@ -161,20 +167,68 @@ const serviceCategories = [
     icon: "◉",
     title: "Process Technology",
     shortTitle: "Support",
-    tagline: "Dependable support for project execution.",
-    image: "photo-1518770660439-4636190af475",
+    tagline: "Get the process right, and everything downstream follows.",
+    image: "public/images/process_tech.png",
     color: "#B3D979",
     challenge:
-      "Project teams need dependable engineering resources who understand deliverables, coordination, and execution pressure.",
+      "Process design must size lines and equipment correctly and keep systems stable under transient events. Gaps here carry into every downstream discipline.",
     outcome:
-      "Flexible engineering support that strengthens delivery quality, coordination, and project responsiveness.",
+      "A documented process basis with verified line sizing and surge protection, giving piping, stress and equipment teams a reliable foundation.",
     capabilities: [
-      "Multidisciplinary engineering support",
-      "Project-based engineering resources",
-      "Technical documentation",
-      "Design coordination",
-      "Engineering review",
-      "Manpower supply",
+      "Process flow diagrams (PFDs) and P&IDs",
+      "Heat and material balances",
+      "Equipment sizing and process datasheets",
+      "Line sizing and steady-state hydraulic analysis",
+      "Pump and system hydraulics, including NPSH checks",
+      "Surge and water hammer analysis",
+      "Surge protection and mitigation design",
+      "Relief and safety system studies",
+      "HAZOP support",
+    ],
+  },
+  {
+    id: "digital",
+    number: "06",
+    icon: "◉",
+    title: "FEA Analysis and Validations",
+    shortTitle: "FEA",
+    tagline: "Precise analysis for complex geometry and loading.",
+    image: "public/images/fea analysis.png",
+    color: "#B3D979",
+    challenge:
+      "Code formulas can't always capture complex geometry, local stresses or unusual loading. Designs need proof, not conservative guesswork.",
+    outcome:
+      "Validated designs backed by simulation, with justified margins and clear reports for client and code acceptance.",
+    capabilities: [
+      "Finite element analysis using ANSYS",
+      "Linear and non-linear static structural analysis",
+      "Thermal and thermo-mechanical stress analysis",
+      "Local stress assessment of nozzles, supports and attachments",
+      "Stress classification and code-based evaluation (ASME Section VIII Div. 2)",
+      "Fatigue and buckling checks",
+    ],
+  },
+  {
+    id: "engineering",
+    number: "07",
+    icon: "◉",
+    title: "Specialised Tool Design",
+    shortTitle: "TooDesign",
+    tagline: "Custom tool design for complex project tasks.",
+    image: "public/images/static_eqip.jpg",
+    color: "#B3D979",
+    challenge:
+      "Complex project tasks often take excessive time and manpower when standard tools and methods are used.",
+    outcome:
+      "Simple, purpose-built tools that shorten task duration, reduce manpower requirements and improve accuracy and safety.",
+    capabilities: [
+      "Task-specific tools for complex or repetitive work",
+      "Tools to reduce task duration and manpower requirements",
+      "Simplified methods for complex project activities",
+      "Tool concepts developed to suit project requirements",
+      "Improved accuracy and repeatability of work",
+      "Safer execution of difficult tasks",
+      "Manpower supply for engineering and project support",
     ],
   },
 ]
@@ -253,7 +307,7 @@ export default function Services({ onNavigate }: ServicesProps) {
           className="absolute inset-0"
           style={{
             backgroundImage:
-              "url(https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=2000&h=1200&fit=crop&auto=format)",
+              "url(public/backgrounds/services-filer1.jpg)",
             backgroundSize: "cover",
             backgroundPosition: "center",
             opacity: 0.18,
@@ -415,7 +469,7 @@ export default function Services({ onNavigate }: ServicesProps) {
               <div
                 className="relative hidden lg:block"
                 style={{
-                  minHeight: 430,
+                  minHeight: 530,
                 }}
               >
                 <div
@@ -703,7 +757,7 @@ export default function Services({ onNavigate }: ServicesProps) {
                 }`}
               >
                 <img
-                  src={`https://images.unsplash.com/${service.image}?w=1100&h=900&fit=crop&auto=format`}
+                  src={service.image}
                   alt={service.title}
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.2s] hover:scale-105"
                 />

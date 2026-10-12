@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react"
 
 type Page = "home" | "about" | "services" | "industries" | "contact"
 
-type Filter = "all" | "energy" | "infrastructure" | "engineering" | "sustainability" | "digital"
+type Filter = "all" | "energy" | "infrastructure" | "engineering" | "sustainability"
 
 interface IndustriesProps {
   onNavigate: (page: Page) => void
@@ -16,136 +16,86 @@ const industries = [
   {
     title: "Oil & Gas",
     challenge:
-      "Navigating commodity volatility and the energy transition while optimizing existing portfolio performance.",
+      "Managing exploration, production, transportation, and refining operations while addressing cost pressures, operational risks, and evolving energy demands.",
     expertise:
-      "Upstream and midstream advisory, production optimization, asset lifecycle management.",
+      "Upstream exploration advisory, midstream infrastructure, downstream refining optimization, production enhancement, and asset lifecycle management.",
     outcome:
       "Improved production efficiency, reduced operating costs, credible transition strategies.",
-    image: "photo-1621905252507-b35492cc74b4",
+    image: "public/backgrounds/ind-filer1.jpg",
     color: "#8CBF3F",
     number: "01",
   },
   {
-    title: "LNG",
+    title: "LNG terminals & Storage facilities",
     challenge:
-      "Developing complex LNG infrastructure with precision engineering, commercial rigor, and regulatory navigation.",
+      "Developing and operating LNG terminals and storage facilities while ensuring safety, technical reliability, regulatory compliance, and commercial viability.",
     expertise:
-      "LNG project FEED, technical due diligence, contracting strategy, project controls.",
+      "LNG terminal design advisory, storage tank engineering, regasification systems, safety assessments, and infrastructure project management.",
     outcome:
       "Bankable projects delivered on schedule with independent technical validation.",
-    image: "photo-1558618666-fcd25c85cd64",
+    image: "public/backgrounds/ind-filer2.jpg",
     color: "#54C6C2",
     number: "02",
   },
   {
-    title: "Renewable Energy",
+    title: "Petrochemicals & chemical plants",
     challenge:
-      "Scaling renewable capacity while managing technology risk, supply chain complexity, and merchant market exposure.",
+      "Optimizing chemical production processes while managing feedstock volatility, plant efficiency, process safety, and environmental compliance.",
     expertise:
-      "Wind, solar, and hybrid project advisory; grid integration; financing support.",
+      "Petrochemical process optimization, plant design advisory, process safety assessments, operational efficiency, and chemical asset management.",
     outcome:
       "Investable, technically robust renewable projects with clear business cases.",
-    image: "photo-1509391366360-2e959784a276",
+    image: "public/backgrounds/ind-filer3.jpg",
     color: "#8CBF3F",
     number: "03",
   },
   {
-    title: "Offshore Energy",
+    title: "FPSO, Offshore platforms",
     challenge:
-      "Managing capital-intensive offshore assets safely, efficiently, and with declining carbon intensity.",
+      "Operating offshore production assets in challenging marine environments while controlling costs, ensuring safety, and maintaining equipment reliability.",
     expertise:
-      "Platform engineering, subsea systems, offshore project management, emissions reduction.",
+      "FPSO engineering advisory, offshore platform design, subsea systems integration, marine operations, and offshore asset integrity management.",
     outcome:
       "Safer, more efficient offshore operations with demonstrable ESG improvement.",
-    image: "photo-1534351590666-13e3e96b5017",
+    image: "public/backgrounds/ind-filer4.jpg",
     color: "#54C6C2",
     number: "04",
   },
   {
-    title: "Hydrogen & Clean Fuels",
+    title: "Power plant & Utilities",
     challenge:
-      "Evaluating and developing hydrogen projects in a rapidly evolving technology and policy environment.",
+      "Maintaining reliable power generation and utility services while improving plant efficiency, managing operating costs, and meeting emissions targets.",
     expertise:
-      "Green hydrogen feasibility, electrolyzer technology assessment, project development advisory.",
+      "Power plant performance optimization, generation planning, utility infrastructure advisory, maintenance strategies, and emissions reduction.",
     outcome:
-      "Clear investment decisions on hydrogen with rigorous technical and commercial analysis.",
-    image: "photo-1473341304170-971dccb5ac1e",
-    color: "#8CBF3F",
+      "Resilient, lower-carbon power businesses positioned for the energy transition.",
+    image: "public/backgrounds/ind-filer5.jpg",
+    color: "#B3D979",
     number: "05",
   },
   {
-    title: "Carbon Capture",
+    title: "Greenfield & Brownfield projects",
     challenge:
-      "Developing CCUS projects with evolving technology, complex regulatory frameworks, and long-horizon economics.",
+      "Executing new developments and existing facility upgrades while managing construction risks, budget constraints, and operational continuity.",
     expertise:
-      "CCUS feasibility, storage assessment, commercial structuring, project management.",
-    outcome:
-      "Well-structured CCUS programs with credible pathways to first carbon.",
-    image: "photo-1559302504-64aae6ca6890",
-    color: "#54C6C2",
-    number: "06",
-  },
-  {
-    title: "Power & Utilities",
-    challenge:
-      "Transitioning power asset portfolios from conventional generation to flexible, low-carbon systems.",
-    expertise:
-      "Grid advisory, generation portfolio strategy, flexibility optimization, digital operations.",
-    outcome:
-      "Resilient, lower-carbon power businesses positioned for the energy transition.",
-    image: "photo-1473341304170-971dccb5ac1e",
-    color: "#B3D979",
-    number: "07",
-  },
-  {
-    title: "Infrastructure",
-    challenge:
-      "Delivering major infrastructure programs on time and within budget in complex operating environments.",
-    expertise:
-      "Owner's team advisory, program governance, project controls, risk management.",
+      "Feasibility studies, engineering and project planning, owner's team advisory, construction management, project controls, and risk mitigation.",
     outcome:
       "Major infrastructure delivered with strong cost and schedule performance.",
-    image: "photo-1486325212027-8081e485255e",
+    image: "public/backgrounds/ind-filer6.jpg",
     color: "#8CBF3F",
-    number: "08",
+    number: "06",
   },
-  {
-    title: "Industrial & Manufacturing",
-    challenge:
-      "Improving productivity, reducing energy intensity, and managing decarbonization in asset-heavy operations.",
-    expertise:
-      "Operational excellence, energy efficiency, digital twin implementation, net-zero planning.",
-    outcome:
-      "More efficient operations, reduced costs, and measurable emissions reduction.",
-    image: "photo-1565793298595-6a879b1d9492",
-    color: "#54C6C2",
-    number: "09",
-  },
-  {
-    title: "Marine & Offshore",
-    challenge:
-      "Managing complex marine and offshore projects with demanding safety, environmental, and regulatory requirements.",
-    expertise:
-      "Marine engineering, offshore project management, SIMOPS, HSE advisory.",
-    outcome:
-      "Safe, compliant offshore operations with strong technical delivery assurance.",
-    image: "photo-1578662996442-48f60103fc96",
-    color: "#8CBF3F",
-    number: "10",
-  },
-]
+];
 
 const projects = [
   {
     id: 1,
-    title: "North Sea Energy Optimization Program",
-    location: "North Sea, UK / Norway",
+    title: "Petroleum product storage tanks",
+    location: "Fujairah, UAE",
     industry: "Offshore Energy",
     tag: "energy" as Filter,
-    challenge:
-      "Improve project efficiency and reduce operational emissions across a multi-asset offshore portfolio.",
-    solution:
-      "Integrated technical consulting, project controls, digital monitoring, and performance optimization.",
+    scope:
+      "Piping stress analysis for API 650 storage tanks, pumps, pig launcher & receiver systems, pipelines, and buried piping systems, including flexibility and support assessment.",
     metrics: [
       { val: "18%", label: "Efficiency Improvement" },
       { val: "12%", label: "Emissions Reduction" },
@@ -156,14 +106,12 @@ const projects = [
   },
   {
     id: 2,
-    title: "Green Hydrogen Feasibility Study",
-    location: "Western Europe",
+    title: "Process platform & flare system",
+    location: "AL Shaheen, UAE",
     industry: "Hydrogen",
-    tag: "sustainability" as Filter,
-    challenge:
-      "Evaluate the technical and commercial viability of a 200MW green hydrogen production facility.",
-    solution:
-      "End-to-end feasibility assessment covering electrolyzer technology, grid integration, offtake structures, and project economics.",
+    tag: "engineering" as Filter,
+    scope:
+      "Piping stress analysis and structural assessment under three critical conditons: Onsite, Blast, and Transportation, ensuring system integrity and compliance with project requirements.",
     metrics: [
       { val: "200MW", label: "Capacity Assessed" },
       { val: "3", label: "Technology Pathways" },
@@ -174,14 +122,12 @@ const projects = [
   },
   {
     id: 3,
-    title: "LNG Terminal FEED Management",
-    location: "East Africa",
+    title: "Gas sweetening unit modification & nitrogen package",
+    location: "West Qurna, Iraq",
     industry: "LNG",
     tag: "engineering" as Filter,
-    challenge:
-      "Provide independent engineering management and technical assurance for a brownfield LNG terminal expansion.",
-    solution:
-      "Owner's engineer services covering FEED management, contractor oversight, schedule recovery, and technical due diligence.",
+    scope:
+      "Piping stress analysis for rebiolers, stripping columns, air coolers.",
     metrics: [
       { val: "2.5Mtpa", label: "Capacity Increase" },
       { val: "6 months", label: "Schedule Recovery" },
@@ -192,14 +138,12 @@ const projects = [
   },
   {
     id: 4,
-    title: "Digital Transformation — Offshore Operator",
+    title: "TUAS water reclamation plant",
     location: "Gulf of Mexico",
-    industry: "Digital",
-    tag: "digital" as Filter,
-    challenge:
-      "Deploy a unified digital platform connecting offshore asset data to shore-based decision support systems.",
-    solution:
-      "Digital architecture design, data integration, real-time monitoring dashboards, and predictive maintenance AI models.",
+    industry: "Infrastructure",
+    tag: "infrastructure" as Filter,
+    scope:
+      "Piping stress analysis and structural stability verification",
     metrics: [
       { val: "60%", label: "Data Visibility Improvement" },
       { val: "$22M", label: "Maintenance Savings" },
@@ -210,14 +154,12 @@ const projects = [
   },
   {
     id: 5,
-    title: "Industrial Net-Zero Roadmap",
-    location: "Northern Europe",
+    title: "Evaporator Package",
+    location: "Hassi messaoud, Algeria",
     industry: "Industrial",
-    tag: "sustainability" as Filter,
-    challenge:
-      "Develop a credible, investor-ready net-zero roadmap for a large industrial manufacturing group.",
-    solution:
-      "Emissions baseline, technology assessment, abatement cost curves, policy scenario analysis, and phased decarbonization strategy.",
+    tag: "engineering" as Filter,
+    scope:
+      "Piping stress analysis for reboilers, stripping columns, air coolers.",
     metrics: [
       { val: "40%", label: "Emissions Target by 2030" },
       { val: "100%", label: "Net-Zero by 2045" },
@@ -228,14 +170,12 @@ const projects = [
   },
   {
     id: 6,
-    title: "Infrastructure Program Controls",
-    location: "Middle East",
+    title: "Conversion HDC2 - Ecofining sannazzaro",
+    location: "Italy",
     industry: "Infrastructure",
-    tag: "infrastructure" as Filter,
-    challenge:
-      "Implement robust project controls across a $3.2B infrastructure program with multiple contractors and work fronts.",
-    solution:
-      "Integrated program controls framework, cost management systems, schedule governance, and risk monitoring.",
+    tag: "sustainability" as Filter,
+    scope:
+      "Piping stress analysis expansion joints.",
     metrics: [
       { val: "$3.2B", label: "Program Value" },
       { val: "94%", label: "Schedule Performance Index" },
@@ -252,12 +192,8 @@ const filters: { id: Filter; label: string }[] = [
   { id: "infrastructure", label: "Infrastructure" },
   { id: "engineering", label: "Engineering" },
   { id: "sustainability", label: "Sustainability" },
-  { id: "digital", label: "Digital" },
 ]
 
-/* =========================================================
-   HOOKS
-========================================================= */
 
 function useScrollReveal(threshold = 0.1) {
   const ref = useRef<HTMLDivElement>(null)
@@ -285,10 +221,6 @@ function useScrollReveal(threshold = 0.1) {
 
   return { ref, visible }
 }
-
-/* =========================================================
-   REVEAL
-========================================================= */
 
 function Reveal({
   children,
@@ -1167,7 +1099,7 @@ export default function Industries({ onNavigate }: IndustriesProps) {
               <Reveal key={industry.title} delay={(index % 2) * 90}>
                 <article className="industry-card rounded-[2px]">
                   <img
-                    src={`https://images.unsplash.com/${industry.image}?w=1000&h=750&fit=crop&auto=format`}
+                    src={industry.image}
                     alt={industry.title}
                     className="industry-card-image"
                     loading="lazy"
@@ -1444,30 +1376,14 @@ export default function Industries({ onNavigate }: IndustriesProps) {
                                 className="text-[10px] font-bold tracking-[.18em] uppercase mb-2"
                                 style={{ color: project.color }}
                               >
-                                Challenge
+                                Scope
                               </div>
 
                               <p
                                 className="text-sm leading-relaxed"
                                 style={{ color: "#B9C9CA" }}
                               >
-                                {project.challenge}
-                              </p>
-                            </div>
-
-                            <div>
-                              <div
-                                className="text-[10px] font-bold tracking-[.18em] uppercase mb-2"
-                                style={{ color: project.color }}
-                              >
-                                Our Solution
-                              </div>
-
-                              <p
-                                className="text-sm leading-relaxed"
-                                style={{ color: "#B9C9CA" }}
-                              >
-                                {project.solution}
+                                {project.scope}
                               </p>
                             </div>
                           </div>
