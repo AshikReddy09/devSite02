@@ -202,8 +202,7 @@ export default function About({ onNavigate }: AboutProps) {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage:
-              "url(public/backgrounds/about_filer1.jpg)",
+            backgroundImage: `url(${import.meta.env.BASE_URL}backgrounds/about_filer1.jpg)`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             opacity: 0.16,
@@ -483,7 +482,7 @@ export default function About({ onNavigate }: AboutProps) {
                 />
 
                 <img
-                  src="public/images/linear.jpg"
+                  src={`${import.meta.env.BASE_URL}images/linear.jpg`}
                   alt="McRam engineering team working together"
                   className="w-full object-cover"
                   style={{
@@ -1357,7 +1356,7 @@ export default function About({ onNavigate }: AboutProps) {
                 }}
               >
                 <img
-                  src="public/backgrounds/about-filer2.jpg"
+                  src={`${import.meta.env.BASE_URL}backgrounds/about-filer2.jpg`}
                   alt="Global engineering operations"
                   className="absolute inset-0 w-full h-full object-cover"
                   style={{

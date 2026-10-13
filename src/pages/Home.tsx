@@ -47,26 +47,22 @@ const teamMembers = [
   {
     name: "Ilaiyaraja V",
     title: "Managing Director",
-    image:
-      "public/images/Managing Director.jpg",
+    image: `${import.meta.env.BASE_URL}images/Managing Director.jpg`,
   },
   {
     name: "Malarvizhi R",
     title: "CEO",
-    image:
-      "public/images/CEO_ed.jpg",
+    image: `${import.meta.env.BASE_URL}images/CEO_ed.jpg`,
   },
   {
     name: "Dinesh P",
     title: "Program Manager",
-    image:
-      "public/images/Dinesh_ed.jpg",
+    image: `${import.meta.env.BASE_URL}images/Dinesh_ed.jpg`,
   },
   {
     name: "R.P. Lakshmi Narayanan",
     title: "Engineering Manager",
-    image:
-      "public/images/LAKSHMI_NARYANA_ed.jpg",
+    image: `${import.meta.env.BASE_URL}images/LAKSHMI_NARYANA_ed.jpg`,
   },
 ]
 
@@ -78,8 +74,7 @@ const articles = [
       "Building dependable piping systems through disciplined stress analysis.",
     description:
       "The engineering checks that support safe, reliable, and efficient project execution.",
-    image:
-      "public/images/str_analysis_sacs.jpg",
+    image: `${import.meta.env.BASE_URL}images/str_analysis_sacs.jpg`,
   },
   {
     category: "Engineering Technologies",
@@ -87,8 +82,7 @@ const articles = [
     title: "Using 3D modelling to improve coordination and reduce project risk.",
     description:
       "How coordinated digital models help teams identify clashes and make better design decisions.",
-    image:
-      "public/images/civil_str_eng.png",
+    image: `${import.meta.env.BASE_URL}images/civil_str_eng.png`,
   },
   {
     category: "Project Experience",
@@ -96,8 +90,7 @@ const articles = [
     title: "Practical engineering support for complex EPC projects.",
     description:
       "A look at the capabilities and delivery discipline behind successful project outcomes.",
-    image:
-      "public/images/static_eqip.jpg",
+    image: `${import.meta.env.BASE_URL}images/static_eqip.jpg`,
   },
 ]
 
@@ -201,7 +194,13 @@ export default function Home({ onNavigate }: HomeProps) {
           HERO
       ========================================================= */}
       <section className="hero-shell">
-        <div className="hero-image" aria-hidden="true" />
+        <div
+          className="hero-image"
+          aria-hidden="true"
+          style={{
+            backgroundImage: `url(${import.meta.env.BASE_URL}backgrounds/home-hero.jpg)`,
+          }}
+        />
         <div className="hero-overlay" aria-hidden="true" />
 
         {/* Engineering motion graphics */}
@@ -352,7 +351,7 @@ export default function Home({ onNavigate }: HomeProps) {
             <div className="image-corner image-corner--br" />
 
             <img
-              src="public/backgrounds/filer1-home.jpg"
+              src={`${import.meta.env.BASE_URL}backgrounds/filer1-home.jpg`}
               alt="Hands clasped together over a blue-toned editorial background"
             />
 
@@ -446,7 +445,7 @@ export default function Home({ onNavigate }: HomeProps) {
           <RevealSection className="leadership-media">
             <div className="leadership-media__frame">
               <img
-                src="public/backgrounds/home-filer2.jpg"
+                src={`${import.meta.env.BASE_URL}backgrounds/home-filer2.jpg`}
                 alt="Premium office building exterior with blue-toned architectural styling"
               />
 
