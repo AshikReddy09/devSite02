@@ -100,7 +100,6 @@ img:not(.brand-logo) {
 .hero-image {
   position: absolute;
   inset: 0;
-  background-image: url("/backgrounds/home-hero.jpg");
   background-size: cover;
   background-position: center;
   background-color: #084259;

@@ -74,7 +74,7 @@ const serviceCategories = [
     title: "Piping Engineering & 3d modeling",
     shortTitle: "Piping",
     tagline: "Every line routed, analysed and ready to build.",
-    image: "public/images/piping_eng_3d_model.jpg",
+    image: `${import.meta.env.BASE_URL}images/piping_eng_3d_model.jpg`,
     color: "#8CBF3F",
     challenge:
       "Congested layouts must satisfy routing, stress, support and construction requirements together. Late clashes or overstressed lines lead to rework.",
@@ -98,7 +98,7 @@ const serviceCategories = [
     title: "Pipe Line Engineering",
     shortTitle: "PipeLine",
     tagline: "Safe, reliable pipelines engineered for the long haul.",
-    image: "public/images/exp_pipingStress.png",
+    image: `${import.meta.env.BASE_URL}images/exp_pipingStress.png`,
     color: "#5E9BB2",
     challenge:
       "Cross-country and facility pipelines face varying terrain, pressures, soil conditions, thermal loads and regulatory demands. Each of these affects integrity over the asset’s life.",
@@ -119,7 +119,7 @@ const serviceCategories = [
     title: "Civil & Structural Engineering(STAAD & SAACS)",
     shortTitle: "Structural",
     tagline: "Strong foundations and structures for demanding industrial plants.",
-    image: "public/images/fea analysis.png",
+    image: `${import.meta.env.BASE_URL}images/fea analysis.png`,
     color: "#6FA8BC",
     challenge:
       "Heavy equipment, pipe racks and dynamic loads demand structures that are safe, economical and coordinated with piping. Late load changes cause redesign.",
@@ -143,7 +143,7 @@ const serviceCategories = [
     title: "Static Equipment Design",
     shortTitle: "Specialized",
     tagline: "Pressure equipment designed right, from datasheet to fabrication.",
-    image: "public/images/usfos.jpg",
+    image: `${import.meta.env.BASE_URL}images/usfos.jpg`,
     color: "#8CBF3F",
     challenge:
       "Vessels, exchangers and tanks operate under high pressure, temperature and nozzle loads. Design must meet code requirements while keeping weight and cost in check.",
@@ -168,7 +168,7 @@ const serviceCategories = [
     title: "Process Technology",
     shortTitle: "Support",
     tagline: "Get the process right, and everything downstream follows.",
-    image: "public/images/process_tech.png",
+    image: `${import.meta.env.BASE_URL}images/process_tech.png`,
     color: "#B3D979",
     challenge:
       "Process design must size lines and equipment correctly and keep systems stable under transient events. Gaps here carry into every downstream discipline.",
@@ -193,7 +193,7 @@ const serviceCategories = [
     title: "FEA Analysis and Validations",
     shortTitle: "FEA",
     tagline: "Precise analysis for complex geometry and loading.",
-    image: "public/images/fea analysis.png",
+    image: `${import.meta.env.BASE_URL}images/fea analysis.png`,
     color: "#B3D979",
     challenge:
       "Code formulas can't always capture complex geometry, local stresses or unusual loading. Designs need proof, not conservative guesswork.",
@@ -215,7 +215,7 @@ const serviceCategories = [
     title: "Specialised Tool Design",
     shortTitle: "TooDesign",
     tagline: "Custom tool design for complex project tasks.",
-    image: "public/images/static_eqip.jpg",
+    image: `${import.meta.env.BASE_URL}images/static_eqip.jpg`,
     color: "#B3D979",
     challenge:
       "Complex project tasks often take excessive time and manpower when standard tools and methods are used.",
@@ -307,7 +307,7 @@ export default function Services({ onNavigate }: ServicesProps) {
           className="absolute inset-0"
           style={{
             backgroundImage:
-              "url(public/backgrounds/services-filer1.jpg)",
+              `url(${import.meta.env.BASE_URL}backgrounds/services-filer1.jpg)`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             opacity: 0.18,

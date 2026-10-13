@@ -21,7 +21,7 @@ const industries = [
       "Upstream exploration advisory, midstream infrastructure, downstream refining optimization, production enhancement, and asset lifecycle management.",
     outcome:
       "Improved production efficiency, reduced operating costs, credible transition strategies.",
-    image: "public/backgrounds/ind-filer1.jpg",
+    image: `${import.meta.env.BASE_URL}backgrounds/ind-filer1.jpg`,
     color: "#8CBF3F",
     number: "01",
   },
@@ -33,7 +33,7 @@ const industries = [
       "LNG terminal design advisory, storage tank engineering, regasification systems, safety assessments, and infrastructure project management.",
     outcome:
       "Bankable projects delivered on schedule with independent technical validation.",
-    image: "public/backgrounds/ind-filer2.jpg",
+    image: `${import.meta.env.BASE_URL}backgrounds/ind-filer2.jpg`,
     color: "#54C6C2",
     number: "02",
   },
@@ -45,7 +45,7 @@ const industries = [
       "Petrochemical process optimization, plant design advisory, process safety assessments, operational efficiency, and chemical asset management.",
     outcome:
       "Investable, technically robust renewable projects with clear business cases.",
-    image: "public/backgrounds/ind-filer3.jpg",
+    image: `${import.meta.env.BASE_URL}backgrounds/ind-filer3.jpg`,
     color: "#8CBF3F",
     number: "03",
   },
@@ -57,7 +57,7 @@ const industries = [
       "FPSO engineering advisory, offshore platform design, subsea systems integration, marine operations, and offshore asset integrity management.",
     outcome:
       "Safer, more efficient offshore operations with demonstrable ESG improvement.",
-    image: "public/backgrounds/ind-filer4.jpg",
+    image: `${import.meta.env.BASE_URL}backgrounds/ind-filer4.jpg`,
     color: "#54C6C2",
     number: "04",
   },
@@ -69,7 +69,7 @@ const industries = [
       "Power plant performance optimization, generation planning, utility infrastructure advisory, maintenance strategies, and emissions reduction.",
     outcome:
       "Resilient, lower-carbon power businesses positioned for the energy transition.",
-    image: "public/backgrounds/ind-filer5.jpg",
+    image: `${import.meta.env.BASE_URL}backgrounds/ind-filer5.jpg`,
     color: "#B3D979",
     number: "05",
   },
@@ -81,7 +81,7 @@ const industries = [
       "Feasibility studies, engineering and project planning, owner's team advisory, construction management, project controls, and risk mitigation.",
     outcome:
       "Major infrastructure delivered with strong cost and schedule performance.",
-    image: "public/backgrounds/ind-filer6.jpg",
+    image: `${import.meta.env.BASE_URL}backgrounds/ind-filer6.jpg`,
     color: "#8CBF3F",
     number: "06",
   },
