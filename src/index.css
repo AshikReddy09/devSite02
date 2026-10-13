@@ -73,7 +73,7 @@ img:not(.brand-logo) {
 }
 
 .eyebrow--light {
-  color: rgba(242, 242, 242, 0.88);
+  color: rgb(140 191 62);
 }
 
 .eyebrow--dark {
@@ -130,7 +130,7 @@ img:not(.brand-logo) {
 
 .hero-copy h1 {
   margin: 0;
-  font-size: clamp(3.2rem, 6vw, 5.6rem);
+  font-size: clamp(1.6rem, 3vw, 2.8rem);
   line-height: 0.95;
   letter-spacing: -0.065em;
   font-weight: 300;
@@ -169,7 +169,7 @@ img:not(.brand-logo) {
 }
 
 .primary-button span {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   line-height: 1;
 }
 

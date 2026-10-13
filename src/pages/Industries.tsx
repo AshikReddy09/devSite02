@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react"
 
 type Page = "home" | "about" | "services" | "industries" | "contact"
 
-type Filter = "all" | "energy" | "infrastructure" | "engineering" | "sustainability" | "digital"
+type Filter = "all" | "energy" | "infrastructure" | "engineering" | "sustainability"
 
 interface IndustriesProps {
   onNavigate: (page: Page) => void
@@ -16,136 +16,86 @@ const industries = [
   {
     title: "Oil & Gas",
     challenge:
-      "Navigating commodity volatility and the energy transition while optimizing existing portfolio performance.",
+      "Managing exploration, production, transportation, and refining operations while addressing cost pressures, operational risks, and evolving energy demands.",
     expertise:
-      "Upstream and midstream advisory, production optimization, asset lifecycle management.",
+      "Upstream exploration advisory, midstream infrastructure, downstream refining optimization, production enhancement, and asset lifecycle management.",
     outcome:
       "Improved production efficiency, reduced operating costs, credible transition strategies.",
-    image: "photo-1621905252507-b35492cc74b4",
+    image: "public/backgrounds/ind-filer1.jpg",
     color: "#8CBF3F",
     number: "01",
   },
   {
-    title: "LNG",
+    title: "LNG terminals & Storage facilities",
     challenge:
-      "Developing complex LNG infrastructure with precision engineering, commercial rigor, and regulatory navigation.",
+      "Developing and operating LNG terminals and storage facilities while ensuring safety, technical reliability, regulatory compliance, and commercial viability.",
     expertise:
-      "LNG project FEED, technical due diligence, contracting strategy, project controls.",
+      "LNG terminal design advisory, storage tank engineering, regasification systems, safety assessments, and infrastructure project management.",
     outcome:
       "Bankable projects delivered on schedule with independent technical validation.",
-    image: "photo-1558618666-fcd25c85cd64",
+    image: "public/backgrounds/ind-filer2.jpg",
     color: "#54C6C2",
     number: "02",
   },
   {
-    title: "Renewable Energy",
+    title: "Petrochemicals & chemical plants",
     challenge:
-      "Scaling renewable capacity while managing technology risk, supply chain complexity, and merchant market exposure.",
+      "Optimizing chemical production processes while managing feedstock volatility, plant efficiency, process safety, and environmental compliance.",
     expertise:
-      "Wind, solar, and hybrid project advisory; grid integration; financing support.",
+      "Petrochemical process optimization, plant design advisory, process safety assessments, operational efficiency, and chemical asset management.",
     outcome:
       "Investable, technically robust renewable projects with clear business cases.",
-    image: "photo-1509391366360-2e959784a276",
+    image: "public/backgrounds/ind-filer3.jpg",
     color: "#8CBF3F",
     number: "03",
   },
   {
-    title: "Offshore Energy",
+    title: "FPSO, Offshore platforms",
     challenge:
-      "Managing capital-intensive offshore assets safely, efficiently, and with declining carbon intensity.",
+      "Operating offshore production assets in challenging marine environments while controlling costs, ensuring safety, and maintaining equipment reliability.",
     expertise:
-      "Platform engineering, subsea systems, offshore project management, emissions reduction.",
+      "FPSO engineering advisory, offshore platform design, subsea systems integration, marine operations, and offshore asset integrity management.",
     outcome:
       "Safer, more efficient offshore operations with demonstrable ESG improvement.",
-    image: "photo-1534351590666-13e3e96b5017",
+    image: "public/backgrounds/ind-filer4.jpg",
     color: "#54C6C2",
     number: "04",
   },
   {
-    title: "Hydrogen & Clean Fuels",
+    title: "Power plant & Utilities",
     challenge:
-      "Evaluating and developing hydrogen projects in a rapidly evolving technology and policy environment.",
+      "Maintaining reliable power generation and utility services while improving plant efficiency, managing operating costs, and meeting emissions targets.",
     expertise:
-      "Green hydrogen feasibility, electrolyzer technology assessment, project development advisory.",
+      "Power plant performance optimization, generation planning, utility infrastructure advisory, maintenance strategies, and emissions reduction.",
     outcome:
-      "Clear investment decisions on hydrogen with rigorous technical and commercial analysis.",
-    image: "photo-1473341304170-971dccb5ac1e",
-    color: "#8CBF3F",
+      "Resilient, lower-carbon power businesses positioned for the energy transition.",
+    image: "public/backgrounds/ind-filer5.jpg",
+    color: "#B3D979",
     number: "05",
   },
   {
-    title: "Carbon Capture",
+    title: "Greenfield & Brownfield projects",
     challenge:
-      "Developing CCUS projects with evolving technology, complex regulatory frameworks, and long-horizon economics.",
+      "Executing new developments and existing facility upgrades while managing construction risks, budget constraints, and operational continuity.",
     expertise:
-      "CCUS feasibility, storage assessment, commercial structuring, project management.",
-    outcome:
-      "Well-structured CCUS programs with credible pathways to first carbon.",
-    image: "photo-1559302504-64aae6ca6890",
-    color: "#54C6C2",
-    number: "06",
-  },
-  {
-    title: "Power & Utilities",
-    challenge:
-      "Transitioning power asset portfolios from conventional generation to flexible, low-carbon systems.",
-    expertise:
-      "Grid advisory, generation portfolio strategy, flexibility optimization, digital operations.",
-    outcome:
-      "Resilient, lower-carbon power businesses positioned for the energy transition.",
-    image: "photo-1473341304170-971dccb5ac1e",
-    color: "#B3D979",
-    number: "07",
-  },
-  {
-    title: "Infrastructure",
-    challenge:
-      "Delivering major infrastructure programs on time and within budget in complex operating environments.",
-    expertise:
-      "Owner's team advisory, program governance, project controls, risk management.",
+      "Feasibility studies, engineering and project planning, owner's team advisory, construction management, project controls, and risk mitigation.",
     outcome:
       "Major infrastructure delivered with strong cost and schedule performance.",
-    image: "photo-1486325212027-8081e485255e",
+    image: "public/backgrounds/ind-filer6.jpg",
     color: "#8CBF3F",
-    number: "08",
+    number: "06",
   },
-  {
-    title: "Industrial & Manufacturing",
-    challenge:
-      "Improving productivity, reducing energy intensity, and managing decarbonization in asset-heavy operations.",
-    expertise:
-      "Operational excellence, energy efficiency, digital twin implementation, net-zero planning.",
-    outcome:
-      "More efficient operations, reduced costs, and measurable emissions reduction.",
-    image: "photo-1565793298595-6a879b1d9492",
-    color: "#54C6C2",
-    number: "09",
-  },
-  {
-    title: "Marine & Offshore",
-    challenge:
-      "Managing complex marine and offshore projects with demanding safety, environmental, and regulatory requirements.",
-    expertise:
-      "Marine engineering, offshore project management, SIMOPS, HSE advisory.",
-    outcome:
-      "Safe, compliant offshore operations with strong technical delivery assurance.",
-    image: "photo-1578662996442-48f60103fc96",
-    color: "#8CBF3F",
-    number: "10",
-  },
-]
+];
 
 const projects = [
   {
     id: 1,
-    title: "North Sea Energy Optimization Program",
-    location: "North Sea, UK / Norway",
+    title: "Petroleum product storage tanks",
+    location: "Fujairah, UAE",
     industry: "Offshore Energy",
     tag: "energy" as Filter,
-    challenge:
-      "Improve project efficiency and reduce operational emissions across a multi-asset offshore portfolio.",
-    solution:
-      "Integrated technical consulting, project controls, digital monitoring, and performance optimization.",
+    scope:
+      "Piping stress analysis for API 650 storage tanks, pumps, pig launcher & receiver systems, pipelines, and buried piping systems, including flexibility and support assessment.",
     metrics: [
       { val: "18%", label: "Efficiency Improvement" },
       { val: "12%", label: "Emissions Reduction" },
@@ -156,14 +106,12 @@ const projects = [
   },
   {
     id: 2,
-    title: "Green Hydrogen Feasibility Study",
-    location: "Western Europe",
+    title: "Process platform & flare system",
+    location: "AL Shaheen, UAE",
     industry: "Hydrogen",
-    tag: "sustainability" as Filter,
-    challenge:
-      "Evaluate the technical and commercial viability of a 200MW green hydrogen production facility.",
-    solution:
-      "End-to-end feasibility assessment covering electrolyzer technology, grid integration, offtake structures, and project economics.",
+    tag: "engineering" as Filter,
+    scope:
+      "Piping stress analysis and structural assessment under three critical conditons: Onsite, Blast, and Transportation, ensuring system integrity and compliance with project requirements.",
     metrics: [
       { val: "200MW", label: "Capacity Assessed" },
       { val: "3", label: "Technology Pathways" },
@@ -174,14 +122,12 @@ const projects = [
   },
   {
     id: 3,
-    title: "LNG Terminal FEED Management",
-    location: "East Africa",
+    title: "Gas sweetening unit modification & nitrogen package",
+    location: "West Qurna, Iraq",
     industry: "LNG",
     tag: "engineering" as Filter,
-    challenge:
-      "Provide independent engineering management and technical assurance for a brownfield LNG terminal expansion.",
-    solution:
-      "Owner's engineer services covering FEED management, contractor oversight, schedule recovery, and technical due diligence.",
+    scope:
+      "Piping stress analysis for rebiolers, stripping columns, air coolers.",
     metrics: [
       { val: "2.5Mtpa", label: "Capacity Increase" },
       { val: "6 months", label: "Schedule Recovery" },
@@ -192,14 +138,12 @@ const projects = [
   },
   {
     id: 4,
-    title: "Digital Transformation — Offshore Operator",
+    title: "TUAS water reclamation plant",
     location: "Gulf of Mexico",
-    industry: "Digital",
-    tag: "digital" as Filter,
-    challenge:
-      "Deploy a unified digital platform connecting offshore asset data to shore-based decision support systems.",
-    solution:
-      "Digital architecture design, data integration, real-time monitoring dashboards, and predictive maintenance AI models.",
+    industry: "Infrastructure",
+    tag: "infrastructure" as Filter,
+    scope:
+      "Piping stress analysis and structural stability verification",
     metrics: [
       { val: "60%", label: "Data Visibility Improvement" },
       { val: "$22M", label: "Maintenance Savings" },
@@ -210,14 +154,12 @@ const projects = [
   },
   {
     id: 5,
-    title: "Industrial Net-Zero Roadmap",
-    location: "Northern Europe",
+    title: "Evaporator Package",
+    location: "Hassi messaoud, Algeria",
     industry: "Industrial",
-    tag: "sustainability" as Filter,
-    challenge:
-      "Develop a credible, investor-ready net-zero roadmap for a large industrial manufacturing group.",
-    solution:
-      "Emissions baseline, technology assessment, abatement cost curves, policy scenario analysis, and phased decarbonization strategy.",
+    tag: "engineering" as Filter,
+    scope:
+      "Piping stress analysis for reboilers, stripping columns, air coolers.",
     metrics: [
       { val: "40%", label: "Emissions Target by 2030" },
       { val: "100%", label: "Net-Zero by 2045" },
@@ -228,14 +170,12 @@ const projects = [
   },
   {
     id: 6,
-    title: "Infrastructure Program Controls",
-    location: "Middle East",
+    title: "Conversion HDC2 - Ecofining sannazzaro",
+    location: "Italy",
     industry: "Infrastructure",
-    tag: "infrastructure" as Filter,
-    challenge:
-      "Implement robust project controls across a $3.2B infrastructure program with multiple contractors and work fronts.",
-    solution:
-      "Integrated program controls framework, cost management systems, schedule governance, and risk monitoring.",
+    tag: "sustainability" as Filter,
+    scope:
+      "Piping stress analysis expansion joints.",
     metrics: [
       { val: "$3.2B", label: "Program Value" },
       { val: "94%", label: "Schedule Performance Index" },
@@ -246,18 +186,14 @@ const projects = [
   },
 ]
 
-const filters: { id: Filter label: string }[] = [
+const filters: { id: Filter; label: string }[] = [
   { id: "all", label: "All Projects" },
   { id: "energy", label: "Energy" },
   { id: "infrastructure", label: "Infrastructure" },
   { id: "engineering", label: "Engineering" },
   { id: "sustainability", label: "Sustainability" },
-  { id: "digital", label: "Digital" },
 ]
 
-/* =========================================================
-   HOOKS
-========================================================= */
 
 function useScrollReveal(threshold = 0.1) {
   const ref = useRef<HTMLDivElement>(null)
@@ -285,10 +221,6 @@ function useScrollReveal(threshold = 0.1) {
 
   return { ref, visible }
 }
-
-/* =========================================================
-   REVEAL
-========================================================= */
 
 function Reveal({
   children,
@@ -464,40 +396,6 @@ export default function Industries({ onNavigate }: IndustriesProps) {
           filter: blur(40px);
           z-index: -1;
           animation: ambientFloat 10s ease-in-out infinite;
-        }
-
-        .hero-orb {
-          position: absolute;
-          border-radius: 50%;
-          pointer-events: none;
-          filter: blur(1px);
-          animation: ambientFloat 8s ease-in-out infinite;
-        }
-
-        .hero-orb-one {
-          width: 420px;
-          height: 420px;
-          right: -160px;
-          top: 60px;
-          background: radial-gradient(
-            circle,
-            rgba(140,191,63,.20) 0%,
-            rgba(140,191,63,.03) 55%,
-            transparent 72%
-          );
-        }
-
-        .hero-orb-two {
-          width: 280px;
-          height: 280px;
-          right: 28%;
-          bottom: -140px;
-          background: radial-gradient(
-            circle,
-            rgba(84,198,194,.16) 0%,
-            transparent 70%
-          );
-          animation-delay: -3s;
         }
 
         .hero-scanline {
@@ -705,6 +603,8 @@ export default function Industries({ onNavigate }: IndustriesProps) {
           position: relative;
           overflow: hidden;
           height: 100%;
+          display: flex;
+          flex-direction: column;
           background: #0A2B38;
           border: 1px solid rgba(255,255,255,.09);
           transition:
@@ -721,6 +621,21 @@ export default function Industries({ onNavigate }: IndustriesProps) {
 
         .project-image {
           transition: transform 900ms cubic-bezier(.2,.8,.2,1);
+        }
+
+        .project-image-frame {
+          height: clamp(240px, 19vw, 320px);
+          flex: 0 0 auto;
+        }
+
+        .project-card-content {
+          display: flex;
+          flex: 1;
+          flex-direction: column;
+        }
+
+        .project-card-footer {
+          margin-top: auto;
         }
 
         .project-card:hover .project-image {
@@ -932,8 +847,14 @@ export default function Industries({ onNavigate }: IndustriesProps) {
             padding: 26px;
           }
 
-          .hero-orb-one {
-            right: -250px;
+          .project-image-frame {
+            height: 245px;
+          }
+        }
+
+        @media (min-width: 1600px) {
+          .project-image-frame {
+            height: 320px;
           }
         }
 
@@ -964,13 +885,13 @@ export default function Industries({ onNavigate }: IndustriesProps) {
       >
         <div className="hero-scanline" />
 
-        <div className="hero-orb hero-orb-one" />
-        <div className="hero-orb hero-orb-two" />
-
         {/* Hero image */}
         <div
-          className="absolute inset-0 pointer-events-none"
+          className="pointer-events-none"
           style={{
+            position: "absolute",
+            inset: 0,
+            pointerEvents: "none",
             transform: `translate3d(${heroMouse.x * -0.25}px, ${
               heroMouse.y * -0.25
             }px, 0) scale(1.05)`,
@@ -978,20 +899,27 @@ export default function Industries({ onNavigate }: IndustriesProps) {
           }}
         >
           <img
-            src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=2000&h=1100&fit=crop&auto=format"
+            src={`${import.meta.env.BASE_URL}backgrounds/projects-hero.jpg`}
             alt=""
-            className="w-full h-full object-cover"
+            className=""
             style={{
-              opacity: 0.18,
-              filter: "saturate(.65)",
+              display: "block",
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              opacity: 0.92,
+              objectPosition: "center 54%",
+              filter: "saturate(.9) contrast(1.06)",
             }}
           />
 
           <div
-            className="absolute inset-0"
+            className=""
             style={{
+              position: "absolute",
+              inset: 0,
               background:
-                "linear-gradient(90deg, rgba(6,27,37,.98) 0%, rgba(6,27,37,.88) 46%, rgba(6,27,37,.42) 100%)",
+                "linear-gradient(90deg, rgba(6,27,37,.82) 0%, rgba(6,27,37,.70) 42%, rgba(6,27,37,.58) 100%), linear-gradient(0deg, rgba(6,27,37,.40) 0%, transparent 48%)",
             }}
           />
         </div>
@@ -1171,7 +1099,7 @@ export default function Industries({ onNavigate }: IndustriesProps) {
               <Reveal key={industry.title} delay={(index % 2) * 90}>
                 <article className="industry-card rounded-[2px]">
                   <img
-                    src={`https://images.unsplash.com/${industry.image}?w=1000&h=750&fit=crop&auto=format`}
+                    src={industry.image}
                     alt={industry.title}
                     className="industry-card-image"
                     loading="lazy"
@@ -1251,7 +1179,7 @@ export default function Industries({ onNavigate }: IndustriesProps) {
           background: "#0A2B38",
         }}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-[1520px] mx-auto px-6 lg:px-10">
           <Reveal>
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-14">
               <div className="max-w-3xl">
@@ -1318,7 +1246,7 @@ export default function Industries({ onNavigate }: IndustriesProps) {
           </Reveal>
 
           {/* Project grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 xl:gap-7">
             {filteredProjects.map((project, index) => {
               const expanded = expandedProject === project.id
 
@@ -1332,9 +1260,8 @@ export default function Industries({ onNavigate }: IndustriesProps) {
                   >
                     {/* Image */}
                     <div
-                      className="relative overflow-hidden"
+                      className="project-image-frame relative overflow-hidden"
                       style={{
-                        height: 245,
                         background: "#071F2A",
                       }}
                     >
@@ -1390,7 +1317,7 @@ export default function Industries({ onNavigate }: IndustriesProps) {
                     </div>
 
                     {/* Content */}
-                    <div className="p-6 md:p-7">
+                    <div className="project-card-content p-6 md:p-7 xl:p-8">
                       <h3
                         className="font-semibold text-lg leading-snug mb-6"
                         style={{
@@ -1449,30 +1376,14 @@ export default function Industries({ onNavigate }: IndustriesProps) {
                                 className="text-[10px] font-bold tracking-[.18em] uppercase mb-2"
                                 style={{ color: project.color }}
                               >
-                                Challenge
+                                Scope
                               </div>
 
                               <p
                                 className="text-sm leading-relaxed"
                                 style={{ color: "#B9C9CA" }}
                               >
-                                {project.challenge}
-                              </p>
-                            </div>
-
-                            <div>
-                              <div
-                                className="text-[10px] font-bold tracking-[.18em] uppercase mb-2"
-                                style={{ color: project.color }}
-                              >
-                                Our Solution
-                              </div>
-
-                              <p
-                                className="text-sm leading-relaxed"
-                                style={{ color: "#B9C9CA" }}
-                              >
-                                {project.solution}
+                                {project.scope}
                               </p>
                             </div>
                           </div>
@@ -1480,7 +1391,7 @@ export default function Industries({ onNavigate }: IndustriesProps) {
                       </div>
 
                       <div
-                        className="flex items-center justify-between mt-6 pt-2"
+                        className="project-card-footer flex items-center justify-between mt-6 pt-2"
                         style={{
                           color: project.color,
                         }}
@@ -1513,7 +1424,7 @@ export default function Industries({ onNavigate }: IndustriesProps) {
           IMPACT
       ===================================================== */}
 
-      <section
+      {/* <section
         className="py-28 md:py-36 relative overflow-hidden"
         style={{
           background: "#071F2A",
@@ -1619,7 +1530,6 @@ export default function Industries({ onNavigate }: IndustriesProps) {
             ))}
           </div>
 
-          {/* Feature cards */}
           <Reveal delay={100}>
             <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-5">
               {[
@@ -1669,7 +1579,7 @@ export default function Industries({ onNavigate }: IndustriesProps) {
             </div>
           </Reveal>
         </div>
-      </section>
+      </section> */}
 
       {/* =====================================================
           CTA

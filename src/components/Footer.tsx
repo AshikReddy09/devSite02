@@ -31,8 +31,6 @@ export default function Footer({ onNavigate }: FooterProps) {
           </p>
           <div className="social-links">
             <span>LinkedIn</span>
-            <span>Instagram</span>
-            <span>Insights</span>
           </div>
         </div>
 

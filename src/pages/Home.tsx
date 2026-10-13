@@ -8,11 +8,10 @@ interface HomeProps {
 
 const partnerLogos = [
   "Oil & Gas",
+  "Offshore",
   "Petrochemical",
   "Power",
-  "Water",
   "Utilities",
-  "Offshore",
 ]
 
 const stats = [
@@ -46,22 +45,28 @@ const valueCards = [
 
 const teamMembers = [
   {
-    name: "Alex Morgan",
+    name: "Ilaiyaraja V",
     title: "Managing Director",
     image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80",
+      "public/images/Managing Director.jpg",
   },
   {
-    name: "Priya Shah",
-    title: "Senior Engineering Specialist",
+    name: "Malarvizhi R",
+    title: "CEO",
     image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80",
+      "public/images/CEO_ed.jpg",
   },
   {
-    name: "Daniel Brooks",
-    title: "Client Strategy Lead",
+    name: "Dinesh P",
+    title: "Program Manager",
     image:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=900&q=80",
+      "public/images/Dinesh_ed.jpg",
+  },
+  {
+    name: "R.P. Lakshmi Narayanan",
+    title: "Engineering Manager",
+    image:
+      "public/images/LAKSHMI_NARYANA_ed.jpg",
   },
 ]
 
@@ -74,7 +79,7 @@ const articles = [
     description:
       "The engineering checks that support safe, reliable, and efficient project execution.",
     image:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80",
+      "public/images/str_analysis_sacs.jpg",
   },
   {
     category: "Engineering Technologies",
@@ -83,7 +88,7 @@ const articles = [
     description:
       "How coordinated digital models help teams identify clashes and make better design decisions.",
     image:
-      "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1200&q=80",
+      "public/images/civil_str_eng.png",
   },
   {
     category: "Project Experience",
@@ -92,7 +97,7 @@ const articles = [
     description:
       "A look at the capabilities and delivery discipline behind successful project outcomes.",
     image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+      "public/images/static_eqip.jpg",
   },
 ]
 
@@ -232,17 +237,16 @@ export default function Home({ onNavigate }: HomeProps) {
             </p>
 
             <h1 className="hero-title">
-              Engineering Excellence.
-              <span>Built on Expertise.</span>
+              Engineering Expertise.
+              <span>Practical Solutions</span>
             </h1>
 
             <p className="hero-text">
-              Integrated engineering solutions for complex EPC and industrial
-              projects. We combine technical expertise, advanced engineering
-              tools, and practical project experience to deliver with
-              precision, efficiency, and confidence.
+              McRam Engineering Solutions is a multidisciplinary engineering consultancy supporting EPC projects across oil and gas, energy, and industrial sectors. We combine strong technical analysis with practical design, helping clients de-risk projects, meet international standards, and deliver on schedule.
             </p>
-
+            <p className="hero-text">
+              From piping and structural engineering, FEA, and specialized studies, our teams turn complex challenges into buildable solutions.
+            </p>
             <button
               className="primary-button hero-button"
               type="button"
@@ -266,7 +270,7 @@ export default function Home({ onNavigate }: HomeProps) {
 
         <div className="partners-wrap">
           <div className="container partners">
-            <span className="partners-label">Our Partners:</span>
+            <span className="partners-label">Our Industry focus:</span>
 
             <div className="partner-logos" aria-label="Brand partners">
               {partnerLogos.map((logo, index) => (
@@ -348,7 +352,7 @@ export default function Home({ onNavigate }: HomeProps) {
             <div className="image-corner image-corner--br" />
 
             <img
-              src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1600&q=80"
+              src="public/backgrounds/filer1-home.jpg"
               alt="Hands clasped together over a blue-toned editorial background"
             />
 
@@ -425,10 +429,9 @@ export default function Home({ onNavigate }: HomeProps) {
             </h2>
 
             <p>
-              McRam brings together experienced professionals and practical
-              project knowledge to support clients through complex engineering
-              requirements with quality and reliability.
+              McRam is led by engineers with hands-on experience across EPC projects worldwide. Our leadership combines technical depth with a clear commitment to quality, safety, and long-term client partnerships.
             </p>
+            <p>Our engineering team Technical expertise behind every deliverable.</p>
 
             <button
               type="button"
@@ -443,7 +446,7 @@ export default function Home({ onNavigate }: HomeProps) {
           <RevealSection className="leadership-media">
             <div className="leadership-media__frame">
               <img
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80"
+                src="public/backgrounds/home-filer2.jpg"
                 alt="Premium office building exterior with blue-toned architectural styling"
               />
 
@@ -797,6 +800,7 @@ export default function Home({ onNavigate }: HomeProps) {
 
         .hero-eyebrow {
           animation: heroReveal .9s .15s both;
+          font-size: 40px;
         }
 
         .hero-title {

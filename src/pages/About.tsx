@@ -103,14 +103,14 @@ const values = [
 
 const timeline = [
   {
-    year: "2010",
+    year: "2019",
     label: "Foundation",
-    desc: "Established to provide reliable engineering solutions for evolving EPC and industrial project requirements.",
+    desc: "McRam was established to provide reliable engineering solutions for evolving EPC and industrial project requirements.",
   },
   {
-    year: "2014",
-    label: "Global Expansion",
-    desc: "Opened offices in Houston and Dubai and began work across the Middle East, US Gulf Coast, and West Africa.",
+    year: "2020",
+    label: "Global Support Projects",
+    desc: "Established our presence in the global EPC market, providing integrated engineering solutions to clients across international projects.",
   },
   {
     year: "2017",
@@ -118,19 +118,19 @@ const timeline = [
     desc: "Launched a dedicated Digital & Data practice to integrate analytics and digital tools into project delivery.",
   },
   {
-    year: "2020",
-    label: "Engineering Expansion",
-    desc: "Expanded engineering capabilities across piping, stress, structural analysis, FEA, and 3D modelling.",
-  },
-  {
-    year: "2023",
+    year: "2022",
     label: "Sector Expansion",
-    desc: "Strengthened project experience across Oil & Gas, Petrochemical, LNG, Power, Water, Utilities, and Offshore sectors.",
+    desc: "Extended our experience across Oil & Gas, Petrochemical, LNG, Power, Water, Utilities, and Offshore projects.",
+  },
+    {
+    year: "2023",
+    label: "Engineering Expansion",
+    desc: "Broadened our capabilities across piping, structural engineering, and FEA, offering clients integrated support from a single team.",
   },
   {
     year: "2026",
     label: "Today",
-    desc: "McRam continues to build technical capability and dependable project partnerships.",
+    desc: "A multidisciplinary consultancy delivering 14+ engineering services across 7+ sectors, with project experience in 6+ international projects.",
   },
 ]
 
@@ -163,11 +163,11 @@ const leadership = [
 
 const capabilities = [
   "Piping Engineering",
-  "Piping Stress Analysis",
+  "Process Technology",
   "Structural Analysis",
-  "Finite Element Analysis",
+  "Pipe line Engineering",
   "3D Modelling",
-  "Specialized Engineering Studies",
+  "Finite Element Engineering Studies",
   "Technical Engineering Support",
   "Engineering Documentation",
 ]
@@ -203,7 +203,7 @@ export default function About({ onNavigate }: AboutProps) {
           className="absolute inset-0"
           style={{
             backgroundImage:
-              "url(https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=2000&h=1200&fit=crop&auto=format)",
+              "url(public/backgrounds/about_filer1.jpg)",
             backgroundSize: "cover",
             backgroundPosition: "center",
             opacity: 0.16,
@@ -298,9 +298,8 @@ export default function About({ onNavigate }: AboutProps) {
                   className="text-base lg:text-lg leading-relaxed max-w-2xl"
                   style={{ color: "rgba(242,242,242,0.7)" }}
                 >
-                  McRam Engineering Solutions delivers integrated,
-                  reliable, and value-driven engineering solutions across the
-                  EPC and industrial sectors.
+                  McRam Engineering Solutions was established to meet the growing need for reliable, high-quality engineering support in the EPC and industrial sectors. Our approach pairs deep technical expertise with practical project understanding, so our solutions are not only correct on paper but also buildable, safe, and efficient in the field. From concept through execution, we support clients across Oil & Gas, Petrochemical, LNG, Power, Water, Utilities, and Offshore projects with the same commitment to quality and accountability.
+
                 </p>
 
                 <div className="flex flex-wrap gap-4 mt-10">
@@ -383,10 +382,10 @@ export default function About({ onNavigate }: AboutProps) {
 
                   <div className="space-y-0">
                     {[
-                      ["01", "Technical Excellence"],
-                      ["02", "Practical Engineering"],
-                      ["03", "Project Partnership"],
-                      ["04", "Long-Term Value"],
+                      ["01", "Technical Depth"],
+                      ["02", "Practical Delivery"],
+                      ["03", "Project Focus"],
+                      ["04", "Long-Term Partnership"],
                     ].map(([number, label], index) => (
                       <div
                         key={number}
@@ -431,7 +430,7 @@ export default function About({ onNavigate }: AboutProps) {
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4">
               {[
-                ["15+", "Years of Expertise"],
+                ["7+", "Years of Expertise"],
                 ["07", "Engineering Disciplines"],
                 ["08", "Core Capabilities"],
                 ["24h", "Response Commitment"],
@@ -484,7 +483,7 @@ export default function About({ onNavigate }: AboutProps) {
                 />
 
                 <img
-                  src="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?w=1000&h=750&fit=crop&auto=format"
+                  src="public/images/linear.jpg"
                   alt="McRam engineering team working together"
                   className="w-full object-cover"
                   style={{
@@ -1134,7 +1133,7 @@ export default function About({ onNavigate }: AboutProps) {
       </section>
 
 
-      <section
+      {/* <section
         className="py-20 lg:py-24 engineering-grid"
         style={{ background: "#082936" }}
       >
@@ -1270,7 +1269,7 @@ export default function About({ onNavigate }: AboutProps) {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section
         className="py-20 lg:py-24"
@@ -1325,9 +1324,9 @@ export default function About({ onNavigate }: AboutProps) {
 
                 <div className="grid grid-cols-3 gap-5 mt-10">
                   {[
-                    ["3", "Office Locations"],
+                    ["1", "Office Locations"],
                     ["25+", "Markets Active"],
-                    ["6", "Continents"],
+                    ["4", "Continents"],
                   ].map(([value, label]) => (
                     <div key={label}>
                       <div
@@ -1358,7 +1357,7 @@ export default function About({ onNavigate }: AboutProps) {
                 }}
               >
                 <img
-                  src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=1000&h=650&fit=crop&auto=format"
+                  src="public/backgrounds/about-filer2.jpg"
                   alt="Global engineering operations"
                   className="absolute inset-0 w-full h-full object-cover"
                   style={{
@@ -1378,9 +1377,9 @@ export default function About({ onNavigate }: AboutProps) {
                   <div className="space-y-3">
                     {[
                       {
-                        city: "London",
-                        country: "United Kingdom",
-                        coords: "51.5°N / 0.1°W",
+                        city: "Singapore",
+                        country: "Singapore",
+                        coords: "1.3°N / 103.8°E",
                       },
                       {
                         city: "Houston",
